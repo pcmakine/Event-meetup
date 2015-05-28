@@ -1,0 +1,223 @@
+15:02:33.867 [TestRunner thread] DEBUG o.s.t.c.j.SpringJUnit4ClassRunner - SpringJUnit4ClassRunner constructor called with [class wad.controller.RegistrationAppTest].
+15:02:33.917 [TestRunner thread] DEBUG o.s.test.context.ContextLoaderUtils - Found explicit ContextLoader class [org.springframework.boot.test.SpringApplicationContextLoader] for context configuration attributes [ContextConfigurationAttributes@2d059fd6 declaringClass = 'wad.controller.RegistrationAppTest', locations = '{}', classes = '{class wad.Application}', inheritLocations = true, initializers = '{}', inheritInitializers = true, name = [null], contextLoaderClass = 'org.springframework.boot.test.SpringApplicationContextLoader']
+15:02:33.925 [TestRunner thread] DEBUG o.s.test.context.ContextLoaderUtils - Could not find an 'annotation declaring class' for annotation type [org.springframework.test.context.ActiveProfiles] and class [wad.controller.RegistrationAppTest]
+15:02:33.930 [TestRunner thread] DEBUG o.s.test.context.TestContextManager - @TestExecutionListeners is not present for class [wad.controller.RegistrationAppTest]: using defaults.
+15:02:33.977 [TestRunner thread] DEBUG o.s.t.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [wad.controller.RegistrationAppTest]
+15:02:33.978 [TestRunner thread] DEBUG o.s.t.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [wad.controller.RegistrationAppTest]
+15:02:33.979 [TestRunner thread] DEBUG o.s.t.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [wad.controller.RegistrationAppTest]
+15:02:33.979 [TestRunner thread] DEBUG o.s.t.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [wad.controller.RegistrationAppTest]
+15:02:33.982 [TestRunner thread] DEBUG o.s.t.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [wad.controller.RegistrationAppTest]
+15:02:33.982 [TestRunner thread] DEBUG o.s.t.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [wad.controller.RegistrationAppTest]
+15:02:34.113 [TestRunner thread] DEBUG o.s.core.env.StandardEnvironment - Adding [systemProperties] PropertySource with lowest search precedence
+15:02:34.116 [TestRunner thread] DEBUG o.s.core.env.StandardEnvironment - Adding [systemEnvironment] PropertySource with lowest search precedence
+15:02:34.116 [TestRunner thread] DEBUG o.s.core.env.StandardEnvironment - Initialized StandardEnvironment with PropertySources [systemProperties,systemEnvironment]
+15:02:34.118 [TestRunner thread] DEBUG o.s.w.c.s.StandardServletEnvironment - Adding [servletConfigInitParams] PropertySource with lowest search precedence
+15:02:34.119 [TestRunner thread] DEBUG o.s.w.c.s.StandardServletEnvironment - Adding [servletContextInitParams] PropertySource with lowest search precedence
+15:02:34.124 [TestRunner thread] DEBUG o.s.w.c.s.StandardServletEnvironment - Adding [jndiProperties] PropertySource with lowest search precedence
+15:02:34.124 [TestRunner thread] DEBUG o.s.w.c.s.StandardServletEnvironment - Adding [systemProperties] PropertySource with lowest search precedence
+15:02:34.124 [TestRunner thread] DEBUG o.s.w.c.s.StandardServletEnvironment - Adding [systemEnvironment] PropertySource with lowest search precedence
+15:02:34.124 [TestRunner thread] DEBUG o.s.w.c.s.StandardServletEnvironment - Initialized StandardServletEnvironment with PropertySources [servletConfigInitParams,servletContextInitParams,jndiProperties,systemProperties,systemEnvironment]
+15:02:34.125 [TestRunner thread] DEBUG o.s.w.c.s.StandardServletEnvironment - Adding [integrationTest] PropertySource with search precedence immediately lower than [systemEnvironment]
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::        (v1.1.5.RELEASE)
+
+2014-09-11 15:02:34.671  INFO 5020 --- [stRunner thread] o.s.boot.SpringApplication               : Starting application on Pete-PC with PID 5020 (C:\Users\Pete\.m2\repository\org\springframework\boot\spring-boot\1.1.5.RELEASE\spring-boot-1.1.5.RELEASE.jar started by Pete in C:\Users\Pete\Documents\NetBeansProjects\s2014-wepa\WK2-W2E01.Ilmoittautuminen)
+2014-09-11 15:02:34.792  INFO 5020 --- [stRunner thread] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@4abf6d1e: startup date [Thu Sep 11 15:02:34 EEST 2014]; root of context hierarchy
+2014-09-11 15:02:35.515  INFO 5020 --- [stRunner thread] o.s.b.f.s.DefaultListableBeanFactory     : Overriding bean definition for bean 'beanNameViewResolver': replacing [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=org.springframework.boot.autoconfigure.web.ErrorMvcAutoConfiguration$WhitelabelErrorViewConfiguration; factoryMethodName=beanNameViewResolver; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [org/springframework/boot/autoconfigure/web/ErrorMvcAutoConfiguration$WhitelabelErrorViewConfiguration.class]] with [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=org.springframework.boot.autoconfigure.web.WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter; factoryMethodName=beanNameViewResolver; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [org/springframework/boot/autoconfigure/web/WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter.class]]
+2014-09-11 15:02:36.917  INFO 5020 --- [stRunner thread] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [class org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$66e8dbf4] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2014-09-11 15:02:36.958  INFO 5020 --- [stRunner thread] trationDelegate$BeanPostProcessorChecker : Bean 'transactionAttributeSource' of type [class org.springframework.transaction.annotation.AnnotationTransactionAttributeSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2014-09-11 15:02:36.979  INFO 5020 --- [stRunner thread] trationDelegate$BeanPostProcessorChecker : Bean 'transactionInterceptor' of type [class org.springframework.transaction.interceptor.TransactionInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2014-09-11 15:02:36.988  INFO 5020 --- [stRunner thread] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.config.internalTransactionAdvisor' of type [class org.springframework.transaction.interceptor.BeanFactoryTransactionAttributeSourceAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2014-09-11 15:02:38.394  INFO 5020 --- [stRunner thread] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2014-09-11 15:02:38.431  INFO 5020 --- [stRunner thread] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2014-09-11 15:02:38.529  INFO 5020 --- [stRunner thread] org.hibernate.Version                    : HHH000412: Hibernate Core {4.3.5.Final}
+2014-09-11 15:02:38.531  INFO 5020 --- [stRunner thread] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2014-09-11 15:02:38.533  INFO 5020 --- [stRunner thread] org.hibernate.cfg.Environment            : HHH000021: Bytecode provider name : javassist
+2014-09-11 15:02:38.694 DEBUG 5020 --- [stRunner thread] org.hibernate.type.BasicTypeRegistry     : Adding type registration boolean -> org.hibernate.type.BooleanType@e935788
+2014-09-11 15:02:38.694 DEBUG 5020 --- [stRunner thread] org.hibernate.type.BasicTypeRegistry     : Adding type registration boolean -> org.hibernate.type.BooleanType@e935788
+2014-09-11 15:02:38.694 DEBUG 5020 --- [stRunner thread] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.lang.Boolean -> org.hibernate.type.BooleanType@e935788
+2014-09-11 15:02:38.695 DEBUG 5020 --- [stRunner thread] org.hibernate.type.BasicTypeRegistry     : Adding type registration numeric_boolean -> org.hibernate.type.NumericBooleanType@7d400c06
+2014-09-11 15:02:38.696 DEBUG 5020 --- [stRunner thread] org.hibernate.type.BasicTypeRegistry     : Adding type registration true_false -> org.hibernate.type.TrueFalseType@6b2d2828
+2014-09-11 15:02:38.697 DEBUG 5020 --- [stRunner thread] org.hibernate.type.BasicTypeRegistry     : Adding type registration yes_no -> org.hibernate.type.YesNoType@17e10d57
+2014-09-11 15:02:38.699 DEBUG 5020 --- [stRunner thread] org.hibernate.type.BasicTypeRegistry     : Adding type registration byte -> org.hibernate.type.ByteType@65ee9a05
+2014-09-11 15:02:38.699 DEBUG 5020 --- [stRunner thread] org.hibernate.type.BasicTypeRegistry     : Adding type registration byte -> org.hibernate.type.ByteType@65ee9a05
+2014-09-11 15:02:38.699 DEBUG 5020 --- [stRunner thread] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.lang.Byte -> org.hibernate.type.ByteType@65ee9a05
+2014-09-11 15:02:38.701 DEBUG 5020 --- [stRunner thread] org.hibernate.type.BasicTypeRegistry     : Adding type registration character -> org.hibernate.type.CharacterType@4f71561b
+2014-09-11 15:02:38.701 DEBUG 5020 --- [stRunner thread] org.hibernate.type.BasicTypeRegistry     : Adding type registration char -> org.hibernate.type.CharacterType@4f71561b
+2014-09-11 15:02:38.701 DEBUG 5020 --- [stRunner thread] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.lang.Character -> org.hibernate.type.CharacterType@4f71561b
+2014-09-11 15:02:38.704 DEBUG 5020 --- [stRunner thread] org.hibernate.type.BasicTypeRegistry     : Adding type registration short -> org.hibernate.type.ShortType@4bed9cf7
+2014-09-11 15:02:38.704 DEBUG 5020 --- [stRunner thread] org.hibernate.type.BasicTypeRegistry     : Adding type registration short -> org.hibernate.type.ShortType@4bed9cf7
+2014-09-11 15:02:38.705 DEBUG 5020 --- [stRunner thread] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.lang.Short -> org.hibernate.type.ShortType@4bed9cf7
+2014-09-11 15:02:38.706 DEBUG 5020 --- [stRunner thread] org.hibernate.type.BasicTypeRegistry     : Adding type registration integer -> org.hibernate.type.IntegerType@1e17070a
+2014-09-11 15:02:38.706 DEBUG 5020 --- [stRunner thread] org.hibernate.type.BasicTypeRegistry     : Adding type registration int -> org.hibernate.type.IntegerType@1e17070a
+2014-09-11 15:02:38.706 DEBUG 5020 --- [stRunner thread] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.lang.Integer -> org.hibernate.type.IntegerType@1e17070a
+2014-09-11 15:02:38.708 DEBUG 5020 --- [stRunner thread] org.hibernate.type.BasicTypeRegistry     : Adding type registration long -> org.hibernate.type.LongType@43c2c3b
+2014-09-11 15:02:38.709 DEBUG 5020 --- [stRunner thread] org.hibernate.type.BasicTypeRegistry     : Adding type registration long -> org.hibernate.type.LongType@43c2c3b
+2014-09-11 15:02:38.709 DEBUG 5020 --- [stRunner thread] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.lang.Long -> org.hibernate.type.LongType@43c2c3b
+2014-09-11 15:02:38.711 DEBUG 5020 --- [stRunner thread] org.hibernate.type.BasicTypeRegistry     : Adding type registration float -> org.hibernate.type.FloatType@36fd9ad2
+2014-09-11 15:02:38.711 DEBUG 5020 --- [stRunner thread] org.hibernate.type.BasicTypeRegistry     : Adding type registration float -> org.hibernate.type.FloatType@36fd9ad2
+2014-09-11 15:02:38.711 DEBUG 5020 --- [stRunner thread] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.lang.Float -> org.hibernate.type.FloatType@36fd9ad2
+2014-09-11 15:02:38.712 DEBUG 5020 --- [stRunner thread] org.hibernate.type.BasicTypeRegistry     : Adding type registration double -> org.hibernate.type.DoubleType@7cc03cf7
+2014-09-11 15:02:38.713 DEBUG 5020 --- [stRunner thread] org.hibernate.type.BasicTypeRegistry     : Adding type registration double -> org.hibernate.type.DoubleType@7cc03cf7
+2014-09-11 15:02:38.713 DEBUG 5020 --- [stRunner thread] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.lang.Double -> org.hibernate.type.DoubleType@7cc03cf7
+2014-09-11 15:02:38.715 DEBUG 5020 --- [stRunner thread] org.hibernate.type.BasicTypeRegistry     : Adding type registration big_decimal -> org.hibernate.type.BigDecimalType@309824aa
+2014-09-11 15:02:38.715 DEBUG 5020 --- [stRunner thread] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.math.BigDecimal -> org.hibernate.type.BigDecimalType@309824aa
+2014-09-11 15:02:38.716 DEBUG 5020 --- [stRunner thread] org.hibernate.type.BasicTypeRegistry     : Adding type registration big_integer -> org.hibernate.type.BigIntegerType@138301d0
+2014-09-11 15:02:38.716 DEBUG 5020 --- [stRunner thread] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.math.BigInteger -> org.hibernate.type.BigIntegerType@138301d0
+2014-09-11 15:02:38.717 DEBUG 5020 --- [stRunner thread] org.hibernate.type.BasicTypeRegistry     : Adding type registration string -> org.hibernate.type.StringType@600522d7
+2014-09-11 15:02:38.718 DEBUG 5020 --- [stRunner thread] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.lang.String -> org.hibernate.type.StringType@600522d7
+2014-09-11 15:02:38.719 DEBUG 5020 --- [stRunner thread] org.hibernate.type.BasicTypeRegistry     : Adding type registration nstring -> org.hibernate.type.StringNVarcharType@5d273e13
+2014-09-11 15:02:38.720 DEBUG 5020 --- [stRunner thread] org.hibernate.type.BasicTypeRegistry     : Adding type registration ncharacter -> org.hibernate.type.CharacterNCharType@1203d0d6
+2014-09-11 15:02:38.721 DEBUG 5020 --- [stRunner thread] org.hibernate.type.BasicTypeRegistry     : Adding type registration url -> org.hibernate.type.UrlType@3d12b4e1
+2014-09-11 15:02:38.721 DEBUG 5020 --- [stRunner thread] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.net.URL -> org.hibernate.type.UrlType@3d12b4e1
+2014-09-11 15:02:38.724 DEBUG 5020 --- [stRunner thread] org.hibernate.type.BasicTypeRegistry     : Adding type registration date -> org.hibernate.type.DateType@3a1f78e6
+2014-09-11 15:02:38.724 DEBUG 5020 --- [stRunner thread] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.sql.Date -> org.hibernate.type.DateType@3a1f78e6
+2014-09-11 15:02:38.726 DEBUG 5020 --- [stRunner thread] org.hibernate.type.BasicTypeRegistry     : Adding type registration time -> org.hibernate.type.TimeType@5ca3f8c7
+2014-09-11 15:02:38.726 DEBUG 5020 --- [stRunner thread] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.sql.Time -> org.hibernate.type.TimeType@5ca3f8c7
+2014-09-11 15:02:38.728 DEBUG 5020 --- [stRunner thread] org.hibernate.type.BasicTypeRegistry     : Adding type registration timestamp -> org.hibernate.type.TimestampType@1221d89
+2014-09-11 15:02:38.728 DEBUG 5020 --- [stRunner thread] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.sql.Timestamp -> org.hibernate.type.TimestampType@1221d89
+2014-09-11 15:02:38.728 DEBUG 5020 --- [stRunner thread] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.util.Date -> org.hibernate.type.TimestampType@1221d89
+2014-09-11 15:02:38.730 DEBUG 5020 --- [stRunner thread] org.hibernate.type.BasicTypeRegistry     : Adding type registration dbtimestamp -> org.hibernate.type.DbTimestampType@2ae58f93
+2014-09-11 15:02:38.731 DEBUG 5020 --- [stRunner thread] org.hibernate.type.BasicTypeRegistry     : Adding type registration calendar -> org.hibernate.type.CalendarType@b9d4c3a
+2014-09-11 15:02:38.732 DEBUG 5020 --- [stRunner thread] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.util.Calendar -> org.hibernate.type.CalendarType@b9d4c3a
+2014-09-11 15:02:38.732 DEBUG 5020 --- [stRunner thread] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.util.GregorianCalendar -> org.hibernate.type.CalendarType@b9d4c3a
+2014-09-11 15:02:38.733 DEBUG 5020 --- [stRunner thread] org.hibernate.type.BasicTypeRegistry     : Adding type registration calendar_date -> org.hibernate.type.CalendarDateType@55b6ed96
+2014-09-11 15:02:38.734 DEBUG 5020 --- [stRunner thread] org.hibernate.type.BasicTypeRegistry     : Adding type registration locale -> org.hibernate.type.LocaleType@3eaf6fe7
+2014-09-11 15:02:38.734 DEBUG 5020 --- [stRunner thread] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.util.Locale -> org.hibernate.type.LocaleType@3eaf6fe7
+2014-09-11 15:02:38.736 DEBUG 5020 --- [stRunner thread] org.hibernate.type.BasicTypeRegistry     : Adding type registration currency -> org.hibernate.type.CurrencyType@5cef9e98
+2014-09-11 15:02:38.737 DEBUG 5020 --- [stRunner thread] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.util.Currency -> org.hibernate.type.CurrencyType@5cef9e98
+2014-09-11 15:02:38.738 DEBUG 5020 --- [stRunner thread] org.hibernate.type.BasicTypeRegistry     : Adding type registration timezone -> org.hibernate.type.TimeZoneType@5090a603
+2014-09-11 15:02:38.738 DEBUG 5020 --- [stRunner thread] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.util.TimeZone -> org.hibernate.type.TimeZoneType@5090a603
+2014-09-11 15:02:38.740 DEBUG 5020 --- [stRunner thread] org.hibernate.type.BasicTypeRegistry     : Adding type registration class -> org.hibernate.type.ClassType@4fdc912f
+2014-09-11 15:02:38.740 DEBUG 5020 --- [stRunner thread] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.lang.Class -> org.hibernate.type.ClassType@4fdc912f
+2014-09-11 15:02:38.742 DEBUG 5020 --- [stRunner thread] org.hibernate.type.BasicTypeRegistry     : Adding type registration uuid-binary -> org.hibernate.type.UUIDBinaryType@33914003
+2014-09-11 15:02:38.742 DEBUG 5020 --- [stRunner thread] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.util.UUID -> org.hibernate.type.UUIDBinaryType@33914003
+2014-09-11 15:02:38.743 DEBUG 5020 --- [stRunner thread] org.hibernate.type.BasicTypeRegistry     : Adding type registration uuid-char -> org.hibernate.type.UUIDCharType@688bb8c0
+2014-09-11 15:02:38.744 DEBUG 5020 --- [stRunner thread] org.hibernate.type.BasicTypeRegistry     : Adding type registration pg-uuid -> org.hibernate.type.PostgresUUIDType@740642a9
+2014-09-11 15:02:38.746 DEBUG 5020 --- [stRunner thread] org.hibernate.type.BasicTypeRegistry     : Adding type registration binary -> org.hibernate.type.BinaryType@5b7ffdd6
+2014-09-11 15:02:38.746 DEBUG 5020 --- [stRunner thread] org.hibernate.type.BasicTypeRegistry     : Adding type registration byte[] -> org.hibernate.type.BinaryType@5b7ffdd6
+2014-09-11 15:02:38.746 DEBUG 5020 --- [stRunner thread] org.hibernate.type.BasicTypeRegistry     : Adding type registration [B -> org.hibernate.type.BinaryType@5b7ffdd6
+2014-09-11 15:02:38.747 DEBUG 5020 --- [stRunner thread] org.hibernate.type.BasicTypeRegistry     : Adding type registration wrapper-binary -> org.hibernate.type.WrapperBinaryType@6385b08b
+2014-09-11 15:02:38.748 DEBUG 5020 --- [stRunner thread] org.hibernate.type.BasicTypeRegistry     : Adding type registration Byte[] -> org.hibernate.type.WrapperBinaryType@6385b08b
+2014-09-11 15:02:38.748 DEBUG 5020 --- [stRunner thread] org.hibernate.type.BasicTypeRegistry     : Adding type registration [Ljava.lang.Byte; -> org.hibernate.type.WrapperBinaryType@6385b08b
+2014-09-11 15:02:38.749 DEBUG 5020 --- [stRunner thread] org.hibernate.type.BasicTypeRegistry     : Adding type registration image -> org.hibernate.type.ImageType@190a1693
+2014-09-11 15:02:38.751 DEBUG 5020 --- [stRunner thread] org.hibernate.type.BasicTypeRegistry     : Adding type registration characters -> org.hibernate.type.CharArrayType@53f4e2a6
+2014-09-11 15:02:38.751 DEBUG 5020 --- [stRunner thread] org.hibernate.type.BasicTypeRegistry     : Adding type registration char[] -> org.hibernate.type.CharArrayType@53f4e2a6
+2014-09-11 15:02:38.752 DEBUG 5020 --- [stRunner thread] org.hibernate.type.BasicTypeRegistry     : Adding type registration [C -> org.hibernate.type.CharArrayType@53f4e2a6
+2014-09-11 15:02:38.753 DEBUG 5020 --- [stRunner thread] org.hibernate.type.BasicTypeRegistry     : Adding type registration wrapper-characters -> org.hibernate.type.CharacterArrayType@77d44522
+2014-09-11 15:02:38.754 DEBUG 5020 --- [stRunner thread] org.hibernate.type.BasicTypeRegistry     : Adding type registration [Ljava.lang.Character; -> org.hibernate.type.CharacterArrayType@77d44522
+2014-09-11 15:02:38.754 DEBUG 5020 --- [stRunner thread] org.hibernate.type.BasicTypeRegistry     : Adding type registration Character[] -> org.hibernate.type.CharacterArrayType@77d44522
+2014-09-11 15:02:38.755 DEBUG 5020 --- [stRunner thread] org.hibernate.type.BasicTypeRegistry     : Adding type registration text -> org.hibernate.type.TextType@63b6377f
+2014-09-11 15:02:38.756 DEBUG 5020 --- [stRunner thread] org.hibernate.type.BasicTypeRegistry     : Adding type registration ntext -> org.hibernate.type.NTextType@4a3bd99c
+2014-09-11 15:02:38.763 DEBUG 5020 --- [stRunner thread] org.hibernate.type.BasicTypeRegistry     : Adding type registration blob -> org.hibernate.type.BlobType@3bad70a3
+2014-09-11 15:02:38.763 DEBUG 5020 --- [stRunner thread] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.sql.Blob -> org.hibernate.type.BlobType@3bad70a3
+2014-09-11 15:02:38.764 DEBUG 5020 --- [stRunner thread] org.hibernate.type.BasicTypeRegistry     : Adding type registration materialized_blob -> org.hibernate.type.MaterializedBlobType@44960990
+2014-09-11 15:02:38.769 DEBUG 5020 --- [stRunner thread] org.hibernate.type.BasicTypeRegistry     : Adding type registration clob -> org.hibernate.type.ClobType@57ea2861
+2014-09-11 15:02:38.770 DEBUG 5020 --- [stRunner thread] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.sql.Clob -> org.hibernate.type.ClobType@57ea2861
+2014-09-11 15:02:38.774 DEBUG 5020 --- [stRunner thread] org.hibernate.type.BasicTypeRegistry     : Adding type registration nclob -> org.hibernate.type.NClobType@4065a018
+2014-09-11 15:02:38.774 DEBUG 5020 --- [stRunner thread] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.sql.NClob -> org.hibernate.type.NClobType@4065a018
+2014-09-11 15:02:38.775 DEBUG 5020 --- [stRunner thread] org.hibernate.type.BasicTypeRegistry     : Adding type registration materialized_clob -> org.hibernate.type.MaterializedClobType@7ff37476
+2014-09-11 15:02:38.775 DEBUG 5020 --- [stRunner thread] org.hibernate.type.BasicTypeRegistry     : Adding type registration materialized_nclob -> org.hibernate.type.MaterializedNClobType@68a2866d
+2014-09-11 15:02:38.777 DEBUG 5020 --- [stRunner thread] org.hibernate.type.BasicTypeRegistry     : Adding type registration serializable -> org.hibernate.type.SerializableType@1f864014
+2014-09-11 15:02:38.780 DEBUG 5020 --- [stRunner thread] org.hibernate.type.BasicTypeRegistry     : Adding type registration object -> org.hibernate.type.ObjectType@1048aee9
+2014-09-11 15:02:38.780 DEBUG 5020 --- [stRunner thread] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.lang.Object -> org.hibernate.type.ObjectType@1048aee9
+2014-09-11 15:02:38.781 DEBUG 5020 --- [stRunner thread] org.hibernate.type.BasicTypeRegistry     : Adding type registration imm_date -> org.hibernate.type.AdaptedImmutableType@7414b05d
+2014-09-11 15:02:38.781 DEBUG 5020 --- [stRunner thread] org.hibernate.type.BasicTypeRegistry     : Adding type registration imm_time -> org.hibernate.type.AdaptedImmutableType@7a46e534
+2014-09-11 15:02:38.781 DEBUG 5020 --- [stRunner thread] org.hibernate.type.BasicTypeRegistry     : Adding type registration imm_timestamp -> org.hibernate.type.AdaptedImmutableType@4471f7a3
+2014-09-11 15:02:38.781 DEBUG 5020 --- [stRunner thread] org.hibernate.type.BasicTypeRegistry     : Adding type registration imm_dbtimestamp -> org.hibernate.type.AdaptedImmutableType@16391170
+2014-09-11 15:02:38.781 DEBUG 5020 --- [stRunner thread] org.hibernate.type.BasicTypeRegistry     : Adding type registration imm_calendar -> org.hibernate.type.AdaptedImmutableType@7ca7db75
+2014-09-11 15:02:38.781 DEBUG 5020 --- [stRunner thread] org.hibernate.type.BasicTypeRegistry     : Adding type registration imm_calendar_date -> org.hibernate.type.AdaptedImmutableType@70391e42
+2014-09-11 15:02:38.781 DEBUG 5020 --- [stRunner thread] org.hibernate.type.BasicTypeRegistry     : Adding type registration imm_binary -> org.hibernate.type.AdaptedImmutableType@35f1b89d
+2014-09-11 15:02:38.781 DEBUG 5020 --- [stRunner thread] org.hibernate.type.BasicTypeRegistry     : Adding type registration imm_serializable -> org.hibernate.type.AdaptedImmutableType@108f6716
+2014-09-11 15:02:38.804  INFO 5020 --- [stRunner thread] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {4.0.4.Final}
+2014-09-11 15:02:38.882  INFO 5020 --- [stRunner thread] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.HSQLDialect
+2014-09-11 15:02:39.051  INFO 5020 --- [stRunner thread] o.h.h.i.ast.ASTQueryTranslatorFactory    : HHH000397: Using ASTQueryTranslatorFactory
+2014-09-11 15:02:39.077 TRACE 5020 --- [stRunner thread] org.hibernate.type.TypeFactory           : Scoping types to session factory org.hibernate.internal.SessionFactoryImpl@30bb7235
+2014-09-11 15:02:39.507  INFO 5020 --- [stRunner thread] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000227: Running hbm2ddl schema export
+2014-09-11 15:02:39.510 DEBUG 5020 --- [stRunner thread] org.hibernate.SQL                        : drop table registration if exists
+2014-09-11 15:02:39.511 DEBUG 5020 --- [stRunner thread] org.hibernate.SQL                        : create table registration (id bigint generated by default as identity (start with 1), address varchar(50) not null, email varchar(255), name varchar(30) not null, primary key (id))
+2014-09-11 15:02:39.511  INFO 5020 --- [stRunner thread] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000230: Schema export complete
+2014-09-11 15:02:40.577  INFO 5020 --- [stRunner thread] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2014-09-11 15:02:40.723  INFO 5020 --- [stRunner thread] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/registrations],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String wad.controller.RegistrationController.register(wad.domain.Registration,org.springframework.validation.BindingResult)
+2014-09-11 15:02:40.723  INFO 5020 --- [stRunner thread] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/registrations],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String wad.controller.RegistrationController.view()
+2014-09-11 15:02:40.726  INFO 5020 --- [stRunner thread] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2014-09-11 15:02:40.726  INFO 5020 --- [stRunner thread] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],methods=[],params=[],headers=[],consumes=[],produces=[text/html],custom=[]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest)
+2014-09-11 15:02:40.756  INFO 5020 --- [stRunner thread] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2014-09-11 15:02:40.756  INFO 5020 --- [stRunner thread] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2014-09-11 15:02:41.171  INFO 5020 --- [stRunner thread] o.s.boot.SpringApplication               : Started application in 7.034 seconds (JVM running for 7.809)
+2014-09-11 15:02:41.197  INFO 5020 --- [stRunner thread] o.s.mock.web.MockServletContext          : Initializing Spring FrameworkServlet ''
+2014-09-11 15:02:41.197  INFO 5020 --- [stRunner thread] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization started
+2014-09-11 15:02:41.218  INFO 5020 --- [stRunner thread] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization completed in 21 ms
+2014-09-11 15:02:41.306  INFO 5020 --- [stRunner thread] o.s.mock.web.MockServletContext          : Initializing Spring FrameworkServlet ''
+2014-09-11 15:02:41.307  INFO 5020 --- [stRunner thread] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization started
+2014-09-11 15:02:41.309  INFO 5020 --- [stRunner thread] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization completed in 2 ms
+2014-09-11 15:02:41.460 DEBUG 5020 --- [stRunner thread] org.hibernate.SQL                        : insert into registration (id, address, email, name) values (default, ?, ?, ?)
+2014-09-11 15:02:41.466 TRACE 5020 --- [stRunner thread] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [e7f67ff1-e7ce-4b]
+2014-09-11 15:02:41.467 TRACE 5020 --- [stRunner thread] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - [f165@e7f6.fi]
+2014-09-11 15:02:41.467 TRACE 5020 --- [stRunner thread] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [VARCHAR] - [f16512a5-c]
+2014-09-11 15:02:41.652 DEBUG 5020 --- [stRunner thread] org.hibernate.SQL                        : select registrati0_.id as id1_0_, registrati0_.address as address2_0_, registrati0_.email as email3_0_, registrati0_.name as name4_0_ from registration registrati0_
+2014-09-11 15:02:41.655 TRACE 5020 --- [stRunner thread] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([id1_0_] : [BIGINT]) - [1]
+2014-09-11 15:02:41.658 TRACE 5020 --- [stRunner thread] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([address2_0_] : [VARCHAR]) - [e7f67ff1-e7ce-4b]
+2014-09-11 15:02:41.658 TRACE 5020 --- [stRunner thread] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([email3_0_] : [VARCHAR]) - [f165@e7f6.fi]
+2014-09-11 15:02:41.659 TRACE 5020 --- [stRunner thread] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([name4_0_] : [VARCHAR]) - [f16512a5-c]
+2014-09-11 15:02:41.665  INFO 5020 --- [stRunner thread] o.s.mock.web.MockServletContext          : Initializing Spring FrameworkServlet ''
+2014-09-11 15:02:41.665  INFO 5020 --- [stRunner thread] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization started
+2014-09-11 15:02:41.667  INFO 5020 --- [stRunner thread] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization completed in 2 ms
+2014-09-11 15:02:41.701 DEBUG 5020 --- [stRunner thread] org.hibernate.SQL                        : select registrati0_.id as id1_0_, registrati0_.address as address2_0_, registrati0_.email as email3_0_, registrati0_.name as name4_0_ from registration registrati0_
+2014-09-11 15:02:41.702 TRACE 5020 --- [stRunner thread] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([id1_0_] : [BIGINT]) - [1]
+2014-09-11 15:02:41.703 TRACE 5020 --- [stRunner thread] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([address2_0_] : [VARCHAR]) - [e7f67ff1-e7ce-4b]
+2014-09-11 15:02:41.703 TRACE 5020 --- [stRunner thread] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([email3_0_] : [VARCHAR]) - [f165@e7f6.fi]
+2014-09-11 15:02:41.703 TRACE 5020 --- [stRunner thread] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([name4_0_] : [VARCHAR]) - [f16512a5-c]
+2014-09-11 15:02:41.709  INFO 5020 --- [stRunner thread] o.s.mock.web.MockServletContext          : Initializing Spring FrameworkServlet ''
+2014-09-11 15:02:41.709  INFO 5020 --- [stRunner thread] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization started
+2014-09-11 15:02:41.711  INFO 5020 --- [stRunner thread] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization completed in 2 ms
+2014-09-11 15:02:41.714 DEBUG 5020 --- [stRunner thread] org.hibernate.SQL                        : select registrati0_.id as id1_0_, registrati0_.address as address2_0_, registrati0_.email as email3_0_, registrati0_.name as name4_0_ from registration registrati0_
+2014-09-11 15:02:41.715 TRACE 5020 --- [stRunner thread] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([id1_0_] : [BIGINT]) - [1]
+2014-09-11 15:02:41.715 TRACE 5020 --- [stRunner thread] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([address2_0_] : [VARCHAR]) - [e7f67ff1-e7ce-4b]
+2014-09-11 15:02:41.715 TRACE 5020 --- [stRunner thread] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([email3_0_] : [VARCHAR]) - [f165@e7f6.fi]
+2014-09-11 15:02:41.715 TRACE 5020 --- [stRunner thread] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([name4_0_] : [VARCHAR]) - [f16512a5-c]
+2014-09-11 15:02:41.719  INFO 5020 --- [stRunner thread] o.s.mock.web.MockServletContext          : Initializing Spring FrameworkServlet ''
+2014-09-11 15:02:41.719  INFO 5020 --- [stRunner thread] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization started
+2014-09-11 15:02:41.721  INFO 5020 --- [stRunner thread] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization completed in 2 ms
+2014-09-11 15:02:41.724 DEBUG 5020 --- [stRunner thread] org.hibernate.SQL                        : select registrati0_.id as id1_0_, registrati0_.address as address2_0_, registrati0_.email as email3_0_, registrati0_.name as name4_0_ from registration registrati0_
+2014-09-11 15:02:41.725 TRACE 5020 --- [stRunner thread] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([id1_0_] : [BIGINT]) - [1]
+2014-09-11 15:02:41.726 TRACE 5020 --- [stRunner thread] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([address2_0_] : [VARCHAR]) - [e7f67ff1-e7ce-4b]
+2014-09-11 15:02:41.726 TRACE 5020 --- [stRunner thread] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([email3_0_] : [VARCHAR]) - [f165@e7f6.fi]
+2014-09-11 15:02:41.726 TRACE 5020 --- [stRunner thread] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([name4_0_] : [VARCHAR]) - [f16512a5-c]
+2014-09-11 15:02:41.730  INFO 5020 --- [stRunner thread] o.s.mock.web.MockServletContext          : Initializing Spring FrameworkServlet ''
+2014-09-11 15:02:41.730  INFO 5020 --- [stRunner thread] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization started
+2014-09-11 15:02:41.732  INFO 5020 --- [stRunner thread] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization completed in 2 ms
+2014-09-11 15:02:41.736 DEBUG 5020 --- [stRunner thread] org.hibernate.SQL                        : select registrati0_.id as id1_0_, registrati0_.address as address2_0_, registrati0_.email as email3_0_, registrati0_.name as name4_0_ from registration registrati0_
+2014-09-11 15:02:41.737 TRACE 5020 --- [stRunner thread] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([id1_0_] : [BIGINT]) - [1]
+2014-09-11 15:02:41.737 TRACE 5020 --- [stRunner thread] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([address2_0_] : [VARCHAR]) - [e7f67ff1-e7ce-4b]
+2014-09-11 15:02:41.737 TRACE 5020 --- [stRunner thread] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([email3_0_] : [VARCHAR]) - [f165@e7f6.fi]
+2014-09-11 15:02:41.737 TRACE 5020 --- [stRunner thread] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([name4_0_] : [VARCHAR]) - [f16512a5-c]
+2014-09-11 15:02:41.740  INFO 5020 --- [stRunner thread] o.s.mock.web.MockServletContext          : Initializing Spring FrameworkServlet ''
+2014-09-11 15:02:41.740  INFO 5020 --- [stRunner thread] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization started
+2014-09-11 15:02:41.742  INFO 5020 --- [stRunner thread] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization completed in 2 ms
+2014-09-11 15:02:41.745 DEBUG 5020 --- [stRunner thread] org.hibernate.SQL                        : select registrati0_.id as id1_0_, registrati0_.address as address2_0_, registrati0_.email as email3_0_, registrati0_.name as name4_0_ from registration registrati0_
+2014-09-11 15:02:41.746 TRACE 5020 --- [stRunner thread] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([id1_0_] : [BIGINT]) - [1]
+2014-09-11 15:02:41.747 TRACE 5020 --- [stRunner thread] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([address2_0_] : [VARCHAR]) - [e7f67ff1-e7ce-4b]
+2014-09-11 15:02:41.747 TRACE 5020 --- [stRunner thread] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([email3_0_] : [VARCHAR]) - [f165@e7f6.fi]
+2014-09-11 15:02:41.747 TRACE 5020 --- [stRunner thread] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([name4_0_] : [VARCHAR]) - [f16512a5-c]
+2014-09-11 15:02:41.752  INFO 5020 --- [stRunner thread] o.s.mock.web.MockServletContext          : Initializing Spring FrameworkServlet ''
+2014-09-11 15:02:41.752  INFO 5020 --- [stRunner thread] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization started
+2014-09-11 15:02:41.754  INFO 5020 --- [stRunner thread] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization completed in 2 ms
+2014-09-11 15:02:41.757 DEBUG 5020 --- [stRunner thread] org.hibernate.SQL                        : select registrati0_.id as id1_0_, registrati0_.address as address2_0_, registrati0_.email as email3_0_, registrati0_.name as name4_0_ from registration registrati0_
+2014-09-11 15:02:41.758 TRACE 5020 --- [stRunner thread] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([id1_0_] : [BIGINT]) - [1]
+2014-09-11 15:02:41.759 TRACE 5020 --- [stRunner thread] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([address2_0_] : [VARCHAR]) - [e7f67ff1-e7ce-4b]
+2014-09-11 15:02:41.759 TRACE 5020 --- [stRunner thread] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([email3_0_] : [VARCHAR]) - [f165@e7f6.fi]
+2014-09-11 15:02:41.759 TRACE 5020 --- [stRunner thread] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([name4_0_] : [VARCHAR]) - [f16512a5-c]
+2014-09-11 15:02:41.801  INFO 5020 --- [       Thread-1] o.s.w.c.s.GenericWebApplicationContext   : Closing org.springframework.web.context.support.GenericWebApplicationContext@4abf6d1e: startup date [Thu Sep 11 15:02:34 EEST 2014]; root of context hierarchy
+2014-09-11 15:02:41.807  INFO 5020 --- [       Thread-1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2014-09-11 15:02:41.808  INFO 5020 --- [       Thread-1] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000227: Running hbm2ddl schema export
+2014-09-11 15:02:41.809 DEBUG 5020 --- [       Thread-1] org.hibernate.SQL                        : drop table registration if exists
+2014-09-11 15:02:41.809  INFO 5020 --- [       Thread-1] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000230: Schema export complete
