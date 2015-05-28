@@ -1,6 +1,5 @@
 package wad.controller;
 
-import fi.helsinki.cs.tmc.edutestutils.Points;
 import java.util.UUID;
 import static org.junit.Assert.*;
 import org.junit.Before;
@@ -23,7 +22,6 @@ import wad.repository.RegistrationRepository;
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(classes = Application.class)
 @WebAppConfiguration
-@Points("W2E01")
 public class RegistrationAppTest {
 
     @Autowired
