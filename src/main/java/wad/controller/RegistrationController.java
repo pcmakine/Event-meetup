@@ -1,8 +1,10 @@
 package wad.controller;
 
+import java.util.List;
 import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,7 +13,6 @@ import wad.domain.Registration;
 import wad.repository.RegistrationRepository;
 
 @Controller
-@RequestMapping("/registrations")
 public class RegistrationController {
 
     @Autowired
@@ -22,12 +23,19 @@ public class RegistrationController {
         return new Registration();
     }
 
-    @RequestMapping(method = RequestMethod.GET)
+    @RequestMapping(value = "/registrations/createform", method = RequestMethod.GET)
     public String view() {
         return "/WEB-INF/views/form.jsp";
     }
 
-    @RequestMapping(method = RequestMethod.POST)
+    @RequestMapping(value = "/registrations", method = RequestMethod.GET)
+    public String viewList(Model model) {
+        List<Registration> registrations = registrationRepository.findAll();
+        model.addAttribute("registrations", registrations);
+        return "/WEB-INF/views/showregistrations.jsp";
+    }
+
+    @RequestMapping(value = "/registrations", method = RequestMethod.POST)
     public String register(
             @Valid @ModelAttribute("registration") Registration registration,
             BindingResult bindingResult) {

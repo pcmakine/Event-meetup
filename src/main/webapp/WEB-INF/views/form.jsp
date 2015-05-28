@@ -8,6 +8,7 @@
         <title>Le Dance Signup</title>
     </head>
     <body>
+        <%@include file="includes/navigation.jsp" %>
         <h1>Sign up for Le Dance!</h1>
 
         <div>
