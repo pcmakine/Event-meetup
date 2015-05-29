@@ -3,6 +3,7 @@
     Created on : May 29, 2015, 12:45:03 AM
     Author     : Pete
 --%>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>

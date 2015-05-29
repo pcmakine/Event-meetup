@@ -1,6 +1,10 @@
 package wad.domain;
 
+import java.util.Date;
 import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Temporal;
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.NotBlank;
@@ -8,13 +12,16 @@ import org.springframework.data.jpa.domain.AbstractPersistable;
 
 @Entity
 public class Registration extends AbstractPersistable<Long> {
-
     @NotBlank
     @Length(min = 4, max = 30)
     private String name;
-    
     @Email
     private String email;
+    @Temporal(javax.persistence.TemporalType.TIMESTAMP)
+    private Date registrationDate;
+    @ManyToOne
+    @JoinColumn
+    private Event event;
 
     public String getName() {
         return name;
@@ -30,6 +37,22 @@ public class Registration extends AbstractPersistable<Long> {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public Date getRegistrationDate() {
+        return registrationDate;
+    }
+
+    public Event getEvent() {
+        return event;
+    }
+
+    public void setEvent(Event event) {
+        this.event = event;
+    }
+
+    public void setRegistrationDate(Date registrationDate) {
+        this.registrationDate = registrationDate;
     }
 
     @Override
@@ -57,4 +80,5 @@ public class Registration extends AbstractPersistable<Long> {
         }
         return true;
     }
+
 }

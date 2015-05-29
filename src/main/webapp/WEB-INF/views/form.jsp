@@ -9,7 +9,7 @@
     </head>
     <body>
         <%@include file="includes/navigation.jsp" %>
-        <h1>Sign up for Le Dance!</h1>
+        <h1>Sign up for the event!</h1>
 
         <div>
             <form:form commandName="registration" action="/registrations" method="POST" >

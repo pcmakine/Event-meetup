@@ -1,5 +1,6 @@
 package wad.controller;
 
+import java.util.Date;
 import java.util.List;
 import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,6 +41,7 @@ public class RegistrationController {
             @Valid @ModelAttribute("registration") Registration registration,
             BindingResult bindingResult) {
         if (!bindingResult.hasErrors()) {
+            registration.setRegistrationDate(new Date());
             registrationRepository.save(registration);
             return "redirect:success.html";
         }
