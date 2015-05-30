@@ -5,7 +5,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Le Dance Signup</title>
+        <title>Register</title>
     </head>
     <body>
         <%@include file="includes/navigation.jsp" %>

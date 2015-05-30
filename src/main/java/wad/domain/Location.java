@@ -5,6 +5,7 @@
  */
 package wad.domain;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
@@ -20,8 +21,8 @@ public class Location extends AbstractPersistable<Long> {
     private String Address;
     private Double latitude;
     private Double longitude;
-    @OneToOne
-    @JoinColumn
+    
+    @OneToOne(cascade={CascadeType.ALL})
     private Event event;
 
     public String getAddress() {

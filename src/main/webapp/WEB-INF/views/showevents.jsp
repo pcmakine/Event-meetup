@@ -18,9 +18,9 @@
             <c:forEach var="event" items="${events}">
                 <li>
                     <a href="/events/${event.id}">${event.name}, ${event.location.address}</a>
-                    
                 </li>
             </c:forEach>
         </ul>
+        <a href="/events/createform">Create a new event</a>
     </body>
 </html>
