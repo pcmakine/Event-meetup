@@ -15,9 +15,9 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
  *
  * @author Pete
  */
-@EnableWebMvc
-@Configuration
-@ComponentScan
+//@EnableWebMvc
+//@Configuration
+//@ComponentScan
 public class MvcConfig extends WebMvcConfigurerAdapter {
  
     @Override
