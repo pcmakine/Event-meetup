@@ -28,22 +28,22 @@ public class DevProfile {
     public void insertTestDataInDB() {
 
         Location location1 = new Location();
-        location1.setAddress("Vaasankatu 10");
-        location1.setLongitude(24.5);
-        location1.setLatitude(63.4);
+        location1.setAddress("Töölönlahti");
+        location1.setLongitude(24.9353961);
+        location1.setLatitude(60.1812755);
         locationRepo.save(location1);
 
         Registration registration = new Registration();
         registration.setEmail("test@testaan.fi");
         registration.setName("Meitsi");
-       // registrationRepo.save(registration);
+        // registrationRepo.save(registration);
 
         Event event = new Event();
         event.setName("eka testieventti");
         event.setDate(new Date(2015 - 1900, 6, 4));
         event.setDescription("Siisti testieventti");
         event.setLocation(location1);
-        event.setRegistrations(Arrays.asList(new Registration[] {registration}));
+        event.setRegistrations(Arrays.asList(new Registration[]{registration}));
         eventRepo.save(event);
 
         location1.setEvent(event);
@@ -52,9 +52,19 @@ public class DevProfile {
         registrationRepo.save(registration);
 
         Location location2 = new Location();
-        location1.setAddress("Ankkalinna 10");
-        location1.setLongitude(66.5);
-        location1.setLatitude(21.4);
+        location2.setAddress("Hietsu");
+        location2.setLongitude(24.9039416);
+        location2.setLatitude(60.1737381);
+
+        Event event2 = new Event();
+        event2.setName("Toka testieventti");
+        event2.setDate(new Date(2015 - 1900, 6, 4));
+        event2.setDescription("Toka siisti testieventti");
+        event2.setLocation(location2);
+        event2.setRegistrations(Arrays.asList(new Registration[]{registration}));
+        eventRepo.save(event);
+
+        location2.setEvent(event2);
         locationRepo.save(location2);
 
     }
