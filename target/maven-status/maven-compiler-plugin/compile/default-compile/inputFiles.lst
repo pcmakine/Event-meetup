@@ -1,12 +1,13 @@
 D:\Web_projects\WK2-W2E01.Ilmoittautuminen\src\main\java\wad\controller\RegistrationController.java
-D:\Web_projects\WK2-W2E01.Ilmoittautuminen\src\main\java\wad\repository\EventRepository.java
 D:\Web_projects\WK2-W2E01.Ilmoittautuminen\src\main\java\wad\controller\EventController.java
+D:\Web_projects\WK2-W2E01.Ilmoittautuminen\src\main\java\wad\Application.java
+D:\Web_projects\WK2-W2E01.Ilmoittautuminen\src\main\java\wad\repository\LocationRepository.java
+D:\Web_projects\WK2-W2E01.Ilmoittautuminen\src\main\java\wad\profiles\ProdProfile.java
+D:\Web_projects\WK2-W2E01.Ilmoittautuminen\src\main\java\wad\repository\EventRepository.java
+D:\Web_projects\WK2-W2E01.Ilmoittautuminen\src\main\java\wad\MvcConfig.java
 D:\Web_projects\WK2-W2E01.Ilmoittautuminen\src\main\java\wad\repository\RegistrationRepository.java
 D:\Web_projects\WK2-W2E01.Ilmoittautuminen\src\main\java\wad\domain\Location.java
 D:\Web_projects\WK2-W2E01.Ilmoittautuminen\src\main\java\wad\controller\DefaultController.java
-D:\Web_projects\WK2-W2E01.Ilmoittautuminen\src\main\java\wad\Application.java
 D:\Web_projects\WK2-W2E01.Ilmoittautuminen\src\main\java\wad\profiles\DevProfile.java
 D:\Web_projects\WK2-W2E01.Ilmoittautuminen\src\main\java\wad\domain\Event.java
 D:\Web_projects\WK2-W2E01.Ilmoittautuminen\src\main\java\wad\domain\Registration.java
-D:\Web_projects\WK2-W2E01.Ilmoittautuminen\src\main\java\wad\profiles\ProdProfile.java
-D:\Web_projects\WK2-W2E01.Ilmoittautuminen\src\main\java\wad\repository\LocationRepository.java
