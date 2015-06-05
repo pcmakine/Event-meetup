@@ -1,6 +1,6 @@
-wad\profiles\DevProfile.class
-wad\controller\RegistrationController.class
 wad\domain\Registration.class
-wad\repository\RegistrationRepository.class
-wad\Application.class
+wad\controller\RegistrationController.class
 wad\profiles\ProdProfile.class
+wad\profiles\DevProfile.class
+wad\Application.class
+wad\repository\RegistrationRepository.class

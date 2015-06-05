@@ -18,7 +18,7 @@
                 Name: <form:input path="name" /> <form:errors path="name" /><br/>
                 Address: <form:input path="location.address" /> <form:errors path="location.address" /><br/>
                 Description: <form:textarea path="description" rows="5" cols="30"/> <form:errors path="description" /><br/>
-                <input type="submit"/>
+                <input class="btn btn-default" value="Input" type="submit"/>
             </form:form>
         </div>
     </body>
