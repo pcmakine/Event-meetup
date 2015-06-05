@@ -11,6 +11,8 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Registrations</title>
+        <script src="<c:url value="/resources/js/test.js" />"></script>
+
     </head>
     <body>
         <%@include file="includes/navigation.jsp" %>
@@ -18,7 +20,13 @@
         <ol>
             <c:forEach var="registration" items="${registrations}">
                 <li>${registration.name}, ${registration.email}</li>
-            </c:forEach>
+                </c:forEach>
         </ol>
+
+
+        <form name=myform>
+            <input type=button value="Try it now" 
+                   onClick="test()">
+        </form>
     </body>
 </html>

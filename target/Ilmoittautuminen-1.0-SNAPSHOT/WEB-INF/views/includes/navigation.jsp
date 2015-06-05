@@ -8,3 +8,4 @@
 <a href="/registrations">Registrations</a>
 <a href="/registrations/createform">Create registration</a>
 <a href="/events">Events</a>
+<a href="navigation.jsp"></a>
