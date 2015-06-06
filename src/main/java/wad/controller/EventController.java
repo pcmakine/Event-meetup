@@ -41,6 +41,11 @@ public class EventController {
         return new Event();
     }
 
+    @ModelAttribute("registration")
+    private Registration getRegistration() {
+        return new Registration();
+    }
+
     @RequestMapping(method = RequestMethod.GET)
     public String viewList(Model model) {
         List<Event> events = eventRepo.findAll();
@@ -61,7 +66,7 @@ public class EventController {
     public String showCreationForm() {
         return "/WEB-INF/views/createevent.jsp";
     }
-    
+
     @RequestMapping(method = RequestMethod.POST)
     public String createEvent(@ModelAttribute("event") Event event, Model model) {
         event.getLocation().setEvent(event);

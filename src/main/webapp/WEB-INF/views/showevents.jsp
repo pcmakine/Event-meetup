@@ -41,7 +41,16 @@
             <form:input id="newEventLatitude" path="location.latitude"/>
             <!--                bootstrap used here for the button-->
             <input class="btn btn-default" value="Create event" type="submit"/>
-
         </form:form>
+
+            <h2 id="signupHeading">Sign up for the event!</h2>
+
+        <div>
+            <form:form commandName="registration" action="/registrations" method="POST" >
+                Name: <form:input path="name" /> <form:errors path="name" /><br/>
+                Email: <form:input path="email" /> <form:errors path="email" /><br/>
+                <input type="submit"/>
+            </form:form>
+        </div>
     </body>
 </html>

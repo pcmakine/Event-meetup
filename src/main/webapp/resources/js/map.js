@@ -4,11 +4,7 @@
  * and open the template in the editor.
  */
 
-var satellites = {
-    "otaniemi": "otaniemi helsinki",
-    "haagahelia": "vaasankatu 10 Helsinki",
-    "hima": "maakaari 1 a 00790 Helsinki"
-};
+var signupHeading = "Sign up for the event "
 var infowindow = new google.maps.InfoWindow();
 var geocoder;
 var myCenter = new google.maps.LatLng(51.508742, -0.120850);
@@ -46,7 +42,7 @@ function addMarker(latit, longit, event) {
     console.log("longit: " + longit)
     console.log("name: " + event.name)
     //  infowindow.setContent(contentStr);
-    addInfoWindow(marker, content);
+    addInfoWindow(marker, content, event);
 }
 
 function addNewEventMarker(latit, longit, event) {
@@ -60,7 +56,7 @@ function addNewEventMarker(latit, longit, event) {
     });
     newEventMarker.setIcon('http://maps.google.com/mapfiles/ms/icons/grn-pushpin.png')
     var content = createEventInfoWindowText(event)
-    addInfoWindow(newEventMarker, content);
+    addInfoWindow(newEventMarker, content, event);
 }
 
 function createEventInfoWindowText(event) {
@@ -69,17 +65,23 @@ function createEventInfoWindowText(event) {
         content = '<h3 id="firstHeading class="firstHeading">' + event.name + '</h3>'
                 + 'Address: ' + event.address;
     } else {
-        content =  '<h3 id="firstHeading class="firstHeading">New event</h3>'
+        content = '<h3 id="firstHeading class="firstHeading">New event</h3>'
                 + 'Address: ' + event.address;
     }
     return content;
 }
 
-function addInfoWindow(marker, content) {
+function addInfoWindow(marker, content, event) {
     google.maps.event.addListener(marker, 'click', (function (marker, content, infowindow) {
         return function () {
             infowindow.setContent(content);
             infowindow.open(map, marker);
+            console.log("called the listener, event name: " + event.name)
+            if (typeof event.name !== 'undefined' && event.name !== null) {
+                document.getElementById('signupHeading').innerText = signupHeading + event.name;
+            } else {
+                document.getElementById('signupHeading').innerText = signupHeading;
+            }
         };
     })(marker, content, infowindow));
 }
