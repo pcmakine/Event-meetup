@@ -18,6 +18,7 @@ var mapProp = {
     mapTypeId: google.maps.MapTypeId.ROADMAP
 };
 var markers = [];
+var newEventMarker = null;
 
 var map;
 function initialize() {
@@ -36,17 +37,42 @@ function addMarker(latit, longit, event) {
         map: map
     });
     markers.push(marker)
+    var content = ""
     if (typeof event !== 'undefined') {
-        var content = '<h1 id="firstHeading"' + event.id + '" class="firstHeading">' + event.name + '</h1>'
-                + 'Address: ' + event.address;
-    } else {
-        content = '<h1 id="firstHeading class="firstHeading">New Event</h1>'
+        content = createEventInfoWindowText(event)
     }
     console.log("adding marker")
     console.log("latit: " + latit)
     console.log("longit: " + longit)
+    console.log("name: " + event.name)
     //  infowindow.setContent(contentStr);
     addInfoWindow(marker, content);
+}
+
+function addNewEventMarker(latit, longit, event) {
+    var latLng = new google.maps.LatLng(latit, longit);
+    if (newEventMarker !== null) {
+        newEventMarker.setMap(null);
+    }
+    newEventMarker = new google.maps.Marker({
+        position: latLng,
+        map: map
+    });
+    newEventMarker.setIcon('http://maps.google.com/mapfiles/ms/icons/grn-pushpin.png')
+    var content = createEventInfoWindowText(event)
+    addInfoWindow(newEventMarker, content);
+}
+
+function createEventInfoWindowText(event) {
+    var content = ""
+    if (typeof event.name !== 'undefined' && event.name !== null) {
+        content = '<h3 id="firstHeading class="firstHeading">' + event.name + '</h3>'
+                + 'Address: ' + event.address;
+    } else {
+        content =  '<h3 id="firstHeading class="firstHeading">New event</h3>'
+                + 'Address: ' + event.address;
+    }
+    return content;
 }
 
 function addInfoWindow(marker, content) {
@@ -57,11 +83,14 @@ function addInfoWindow(marker, content) {
         };
     })(marker, content, infowindow));
 }
-function geocodeAddress(placeName, address, func) {
+function geocodeAddressAndFillNewEventAddressField(placeName, address, func) {
     console.log("geocodeAddress method called")
     geocoder.geocode({'address': address}, function (results, status) {
         if (status == google.maps.GeocoderStatus.OK) {
             console.log("Status ok")
+            document.getElementById('newEventAddress').value = address;
+            document.getElementById('newEventLongitude').value = results[0].geometry.location.lng();
+            document.getElementById('newEventLatitude').value = results[0].geometry.location.lat();
             func(placeName, address, results[0].geometry.location)
         }
     });
@@ -70,13 +99,15 @@ function moveMap(placeName, address, coordinates) {
     console.log("MoveMap called")
     console.log("geocoder: " + geocoder)
     if (coordinates != null) {
-        addMarker(coordinates.lat(), coordinates.lng())
+        var event = {};
+        event.address = address;
+        addNewEventMarker(coordinates.lat(), coordinates.lng(), event)
         map.panTo(coordinates)
-    //    return false;
+        //    return false;
     }
 }
 function showPlace(placeName, address) {
-    geocodeAddress(placeName, address, moveMap);
+    geocodeAddressAndFillNewEventAddressField(placeName, address, moveMap);
 }
 
 google.maps.event.addDomListener(window, 'load', initialize);

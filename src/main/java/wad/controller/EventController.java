@@ -54,7 +54,6 @@ public class EventController {
         model.addAttribute("event", event);
         System.out.println(event);
         System.out.println(event.getLocation());
-
         return "/WEB-INF/views/event.jsp";
     }
 
@@ -64,11 +63,10 @@ public class EventController {
     }
     
     @RequestMapping(method = RequestMethod.POST)
-    public String createEvent(@ModelAttribute("event") Event event) {
+    public String createEvent(@ModelAttribute("event") Event event, Model model) {
         event.getLocation().setEvent(event);
         locationRepo.save(event.getLocation());
         eventRepo.save(event);
-
         return "redirect:/events";
     }
 }
