@@ -9,6 +9,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <link href="<c:url value="/resources/bootstrap/css/bootstrap.min.css" />" rel="stylesheet" type="text/css"/>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Registrations</title>
         <script src="<c:url value="/resources/js/test.js" />"></script>
@@ -24,17 +25,5 @@
         </ol>
 
 
-        <form name=myform>
-            <input type=button value="Try it now" 
-                   onClick="test()">
-        </form>
-        
-        <hr>
-        
-        
-        
-        
-        
-        
     </body>
 </html>
