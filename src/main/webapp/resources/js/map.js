@@ -65,7 +65,7 @@ function createEventInfoWindowText(event) {
     if (typeof event.name !== 'undefined' && event.name !== null) {
         content = '<h3 id="firstHeading class="firstHeading">' + event.name + '</h3>'
                 + 'Date: ' + event.date + '</br>'
-                + 'Address: ' + event.address;
+                + 'Attendees: ' + event.registrations.length;
     } else {
         content = '<h3 id="firstHeading class="firstHeading">New event</h3>'
                 + 'Address: ' + event.address;
@@ -79,8 +79,9 @@ function addInfoWindow(marker, content, event) {
             infowindow.setContent(content);
             infowindow.open(map, marker);
             console.log("called the listener, event name: " + event.name)
+            console.log("registrations: " + event.registrations)
             if (typeof event.name !== 'undefined' && event.name !== null) {     //If the event has a name it is an existing event
-                
+                document.getElementById('eventId').value = event.id;
                 document.getElementById('signupHeading').innerText = signupHeading + event.name;
             } else {
                 document.getElementById('signupHeading').innerText = signupHeading;

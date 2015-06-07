@@ -82,6 +82,7 @@ public class EventController {
     public String createEvent(@Valid @ModelAttribute("event") Event event,
             BindingResult bindingResult) {
         System.out.println("event name: " + event.getName());
+        System.out.println("Event date:" + event.getDate());
         if (!bindingResult.hasErrors()) {
 
         }
