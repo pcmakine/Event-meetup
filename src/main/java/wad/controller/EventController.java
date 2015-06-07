@@ -68,7 +68,12 @@ public class EventController {
     }
 
     @RequestMapping(method = RequestMethod.POST)
-    public String createEvent(@ModelAttribute("event") Event event, Model model) {
+    public String createEvent(@Valid @ModelAttribute("event") Event event, 
+            BindingResult bindingResult) {
+        System.out.println("event name: " + event.getName());
+        if (!bindingResult.hasErrors()) {
+            
+        } 
         event.getLocation().setEvent(event);
         locationRepo.save(event.getLocation());
         eventRepo.save(event);

@@ -29,13 +29,13 @@
     <body>
         <%@include file="includes/navigation.jsp" %>
         <h1>Events</h1>
-        <input id="searchAddressField" name="textbox1" type="text" />
-        <input name="searchAddress" onclick="showPlace('test', document.getElementById('searchAddressField').value)" type="button" value="Search" />
         <div id="googleMap"  style="width:100%;height:380px;"></div>
 
-        <form:form id="eventForm" commandName="event" action="/events" method="POST" >
+        <form:form id="eventForm" commandName="event" action="/events" method="POST" accept-charset="UTF-8" >
             Event name: <form:input id="newEventName" path="name" /> <form:errors path="name" /><br/>
-            Address: <form:input id="newEventAddress" path="location.address" /> <form:errors path="location.address" /><br/>
+            Address: <form:input id="newEventAddress" path="location.address" /> <form:errors path="location.address" /> <input name="searchAddress" onclick="showPlace('test', document.getElementById('newEventAddress').value)" type="button" value="Search" /><br/>
+            Date: <form:input id="newEventDate" path="date" placeholder="dd.mm.yyyy"/><br/>
+            Time: <form:input id="newEventTime" path="time" /><br/>
             Description: <form:textarea path="description" rows="5" cols="30"/> <form:errors path="description" /><br/>
             <form:input id="newEventLongitude" path="location.longitude" type="hidden"/>
             <form:input id="newEventLatitude" path="location.latitude" type="hidden"/>

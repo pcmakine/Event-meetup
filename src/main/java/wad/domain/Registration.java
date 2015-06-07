@@ -22,6 +22,7 @@ public class Registration extends AbstractPersistable<Long> {
     @ManyToOne
     @JoinColumn
     private Event event;
+    private String comment;
 
     public String getName() {
         return name;

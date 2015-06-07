@@ -14,6 +14,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
+import org.hibernate.validator.constraints.NotBlank;
 import org.springframework.data.jpa.domain.AbstractPersistable;
 
 /**
@@ -22,7 +23,7 @@ import org.springframework.data.jpa.domain.AbstractPersistable;
  */
 @Entity
 public class Event extends AbstractPersistable<Long> {
-
+    @NotBlank
     private String name;
     @OneToMany(fetch = FetchType.EAGER, mappedBy = "event")
     private List<Registration> registrations;
@@ -30,8 +31,10 @@ public class Event extends AbstractPersistable<Long> {
     private Location location;
     private String description;
     @Column(name = "event_date")
-    @Temporal(javax.persistence.TemporalType.TIMESTAMP)
+    @Temporal(javax.persistence.TemporalType.DATE)
     private Date date;
+    @Temporal(javax.persistence.TemporalType.TIME)
+    private Date time;
 
     public String getName() {
         return name;
@@ -71,6 +74,15 @@ public class Event extends AbstractPersistable<Long> {
 
     public void setDate(Date date) {
         this.date = date;
+    }
+    
+    
+    public Date getTime() {
+        return time;
+    }
+
+    public void setTime(Date time) {
+        this.time = time;
     }
 
 }

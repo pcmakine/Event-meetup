@@ -5,6 +5,7 @@
  */
 
 var signupHeading = "Sign up for the event "
+var chosenEvent = {};
 var infowindow = new google.maps.InfoWindow();
 var geocoder;
 var myCenter = new google.maps.LatLng(51.508742, -0.120850);
@@ -77,7 +78,8 @@ function addInfoWindow(marker, content, event) {
             infowindow.setContent(content);
             infowindow.open(map, marker);
             console.log("called the listener, event name: " + event.name)
-            if (typeof event.name !== 'undefined' && event.name !== null) {
+            if (typeof event.name !== 'undefined' && event.name !== null) {     //If the event has a name it is an existing event
+                
                 document.getElementById('signupHeading').innerText = signupHeading + event.name;
             } else {
                 document.getElementById('signupHeading').innerText = signupHeading;
