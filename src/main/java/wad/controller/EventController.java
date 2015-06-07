@@ -61,7 +61,7 @@ public class EventController {
     public String viewList(Model model) {
         List<Event> events = eventRepo.findAll();
         model.addAttribute("events", events);
-        return "/WEB-INF/views/showevents.jsp";
+        return "/WEB-INF/views/test.jsp";
     }
 
     @RequestMapping(value = "/{eventId}", method = RequestMethod.GET)
