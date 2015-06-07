@@ -32,9 +32,11 @@
         <div id="googleMap"  style="width:100%;height:380px;"></div>
 
         <form:form id="eventForm" commandName="event" action="/events" method="POST" accept-charset="UTF-8" >
-            Event name: <form:input id="newEventName" path="name" /> <form:errors path="name" /><br/>
-            Address: <form:input id="newEventAddress" path="location.address" /> <form:errors path="location.address" /> <input name="searchAddress" onclick="showPlace('test', document.getElementById('newEventAddress').value)" type="button" value="Search" /><br/>
-            Date: <form:input id="newEventDate" path="date" placeholder="dd.mm.yyyy"/><br/>
+            <fmt:formatDate value="${yourObject.date}" var="dateString" pattern='dd.MM.yyyy' />
+            Event name: <form:input id="newEventName" path="name" /> <form:errors path="name" /><br/><form:errors path="name" /> 
+            Address: <form:input id="newEventAddress" path="location.address" /> <form:errors path="location.address" /> 
+            <input name="searchAddress" onclick="showPlace('test', document.getElementById('newEventAddress').value)" type="button" value="Search" /><br/>
+            Date: <form:input id="newEventDate" path="date" class= "date" placeholder="dd.mm.yyyy" value ="<fmt:formatDate value='' pattern='dd.MM.yyyy' />"/><br/>
             Time: <form:input id="newEventTime" path="time" /><br/>
             Description: <form:textarea path="description" rows="5" cols="30"/> <form:errors path="description" /><br/>
             <form:input id="newEventLongitude" path="location.longitude" type="hidden"/>

@@ -64,6 +64,7 @@ function createEventInfoWindowText(event) {
     var content = ""
     if (typeof event.name !== 'undefined' && event.name !== null) {
         content = '<h3 id="firstHeading class="firstHeading">' + event.name + '</h3>'
+                + 'Date: ' + event.date + '</br>'
                 + 'Address: ' + event.address;
     } else {
         content = '<h3 id="firstHeading class="firstHeading">New event</h3>'
