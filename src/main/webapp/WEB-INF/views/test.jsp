@@ -85,10 +85,18 @@
 
         <!--GOOGLE MAP API -->
 
-        <div id="googleMap"  style="width:100%;height:380px;"></div>
+        <div id="googleMap"  style="width:100%;height:310px;"></div>
 
         <!--END GOOGLE MAP API -->
-
+        <!--TABS NAV-->
+        
+<ul class="nav nav-tabs">
+  <li role="presentation" class="active"><a href="#">Create Event</a></li>
+  <li role="presentation"><a href="#">Event Details</a></li>
+  
+</ul>
+        
+        <!--END TABS NAV-->
 
     <!-- END CONTAINER FORM RESPONSIVE -->
 
@@ -103,8 +111,12 @@
 
 
     <form:form id="eventForm" commandName="event" action="/events" method="POST" accept-charset="UTF-8" >
+        
+        
         <fmt:formatDate value="${yourObject.date}" var="dateString" pattern='dd.MM.yyyy' />
+        
         Event name: <form:input id="newEventName" path="name" /> <form:errors path="name" /><br/><form:errors path="name" /> 
+        
         Address: <form:input id="newEventAddress" path="location.address" /> <form:errors path="location.address" /> 
         <input name="searchAddress" onclick="showPlace('test', document.getElementById('newEventAddress').value)" type="button" class="btn btn-default" value="Search" /><br/>
         Date: <form:input id="newEventDate" path="date" class= "date" placeholder="dd.mm.yyyy" value ="<fmt:formatDate value='' pattern='dd.MM.yyyy' />"/><br/>
@@ -115,6 +127,43 @@
         <!--                bootstrap used here for the button-->
         <input class="btn btn-default" value="Create event"  type="submit"/>
     </form:form>
+        
+<form:form id="eventForm" commandName="event" action="/events" method="POST" accept-charset="UTF-8" >
+<fmt:formatDate value="${yourObject.date}" var="dateString" pattern='dd.MM.yyyy' />
+<table>
+    <tr>
+        <td>Event name:</td>
+        <td><form:input id="newEventName" path="name" /></td>
+        <td> <form:errors path="name" /><br/><form:errors path="name" /> </td>
+    </tr>
+    <tr>
+        <td>Address:</td>
+        <td> <form:input id="newEventAddress" path="location.address" /></td>
+        <td>  <input name="searchAddress" onclick="showPlace('test', document.getElementById('newEventAddress').value)" type="button" class="btn btn-default" value="Search" /><form:errors path="location.address" /> </td>
+    </tr>
+    <tr>
+        <td>Date:</td>
+        <td><form:input id="newEventDate" path="date" class= "date" placeholder="dd.mm.yyyy" value ="<fmt:formatDate value='' pattern='dd.MM.yyyy' />"/></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>Time:</td>
+        <td><form:input id="newEventTime" path="time" /></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>Description:</td>
+        <td><form:textarea path="description" rows="5" cols="30"/></td>
+        <td><form:errors path="description" /></td>
+    </tr>
+</table>
+        
+</form:form>
+   
+        
+ 
+        
+        
 
     <h2 id="signupHeading">Sign up for the event!</h2>
 
