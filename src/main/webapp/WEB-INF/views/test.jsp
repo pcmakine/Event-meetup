@@ -124,11 +124,14 @@
                 <h2 id="signupHeading">Sign up for the event!</h2>
 
                 <div>
-                    <form:form role="form" commandName="registration" action="/registrations" method="POST" >
+                    <form:form role="form" class="form-inline" commandName="registration" action="/registrations" method="POST" >
                         <div class="form-group">
-                            <label for="name" class="col-sm-2 control-label">Name:</label>
-                           <form:input id="name" path="name" class="form-control col-sm-2" /> <form:errors path="name" />
+                          <label for="name" >Name</label>
+                           <form:input id="name" path="name" class="form-control" /> <form:errors path="name" />
                         </div>
+  
+                        <input id="eventId" type="hidden"/><br/>
+                        <input type="submit"/>
     
                     </form:form>
                 </div>
