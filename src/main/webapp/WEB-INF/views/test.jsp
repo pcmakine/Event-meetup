@@ -44,14 +44,16 @@
         <script src="<c:url value="/resources/js/map.js" />"></script>
         <script>
             var eventList = [];
-            console.log("test")
             <c:forEach var="event" items="${events}" varStatus="i">
-
             var registrationList = [];
-            var reg = {};
+            console.log("event " + '${event.name}' + "registrations: " + '${event.registrations}')
+                <c:forEach var="registration" items="${event.registrations}" varStatus="i">
+            registrationList.push('${registration.name}')
+                </c:forEach>
+
             e = {id: '${event.id}',
                 name: '${event.name}',
-                registrations: '${registrationList}',
+                registrations: registrationList,
                 description: '${event.description}',
                 date: '${event.date}',
                 address: '${event.location.address}',
@@ -60,8 +62,6 @@
             eventList.push(e);
             </c:forEach>
         </script>
-
-
 
     </head>
 
@@ -105,6 +105,30 @@
                 <!--<p class="lead">Choose an event or make your own</p>-->
 
                 <!--CONTAINER FORM RESPONSIVE -->
+                <%@include file="includes/createeventform.jsp" %>
+
+                <h2 id="signupHeading">Sign up for the event!</h2>
+
+                <div>
+
+
+                    <form:form role="form" class="form-inline" commandName="registration" action="/registrations" method="POST" >
+                        <div class="form-group">
+                            <label for="name" >Name</label>
+                            <form:input id="name" path="name" class="form-control" /> <form:errors path="name" />
+                        </div>
+
+                        <input id="eventId" name="eventId"/><br/>
+                        <input type="submit"/>
+
+                    </form:form>
+                </div>
+
+
+
+
+
+
 
 
                 <form:form id="eventForm" commandName="event" action="/events" method="POST" accept-charset="UTF-8" >
@@ -120,22 +144,25 @@
                     <!--                bootstrap used here for the button-->
                     <input class="btn btn-default" value="Create event" type="submit"/>
                 </form:form>
+                <form:form class="form-horizontal" role="form" id="eventForm" commandName="event" action="/events" method="POST" accept-charset="UTF-8" >
+                    <div class="form-group col-md-12">
+                        <label class="control-label col-md-2" for="newEventName">Event name:</label>
+                        <div class="input-group col-md-10">
+                            <form:input id="newEventName" path="name" class="form-control"/><form:errors path="name" /><br/><form:errors path="name" /> 
 
-                <h2 id="signupHeading">Sign up for the event!</h2>
-
-                <div>
-                    <form:form role="form" class="form-inline" commandName="registration" action="/registrations" method="POST" >
-                        <div class="form-group">
-                          <label for="name" >Name</label>
-                           <form:input id="name" path="name" class="form-control" /> <form:errors path="name" />
                         </div>
-  
-                        <input id="eventId" type="hidden"/><br/>
-                        <input type="submit"/>
-    
-                    </form:form>
-                </div>
+                    </div>
 
+                    <div class="form-group col-md-12">
+                        <label class="control-label col-md-2" for="newEventAddress">Address:</label>
+                        <div class="input-group col-md-10">
+                            <form:input id="newEventAddress" path="location.address" class="form-control"/><form:errors path="location.address" /> 
+                            <span class="input-group-btn">
+                                <button class="btn btn-default" type="button"><i class="glyphicon glyphicon-search"></i></button>
+                            </span>
+                        </div>
+                    </div>
+                </form:form>
 
             </div>
 

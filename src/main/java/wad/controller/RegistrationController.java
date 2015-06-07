@@ -56,7 +56,7 @@ public class RegistrationController {
             
             registration.setRegistrationDate(new Date());
             registrationRepository.save(registration);
-            return "redirect:success.html";
+            return "redirect:/events";
         }
         return view();
     }
