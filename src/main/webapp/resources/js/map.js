@@ -83,11 +83,34 @@ function addInfoWindow(marker, content, event) {
             if (typeof event.name !== 'undefined' && event.name !== null) {     //If the event has a name it is an existing event
                 document.getElementById('eventId').value = event.id;
                 document.getElementById('signupHeading').innerText = signupHeading + event.name;
+
+                document.getElementById('eventDetailsName').innerText = "";
+                document.getElementById('eventDetailsAddress').innerText ="";
+                 document.getElementById('eventDetailsDate').innerText = "";
+                 document.getElementById('eventDetailsTime').innerText = "";
+                 document.getElementById('eventDetailsDescription').innerText = "";
+
+                document.getElementById('eventDetailsName').innerText = event.name;
+                if (typeof event.address !== 'undefined' && event.address !== null) {
+                    document.getElementById('eventDetailsAddress').innerText = event.address;
+                }
+                if (typeof event.date !== 'undefined' && event.date !== null) {
+                    document.getElementById('eventDetailsDate').innerText = event.date;
+                }
+                if (typeof event.time !== 'undefined' && event.time !== null) {
+                    document.getElementById('eventDetailsTime').innerText = event.time;
+                }
+                if (typeof event.description !== 'undefined' && event.description !== null) {
+                    document.getElementById('eventDetailsDescription').innerText = event.description;
+                }
+
             } else {
                 document.getElementById('signupHeading').innerText = signupHeading;
             }
-        };
-    })(marker, content, infowindow));
+        }
+        ;
+    }
+    )(marker, content, infowindow));
 }
 function geocodeAddressAndFillNewEventAddressField(placeName, address, func) {
     console.log("geocodeAddress method called")

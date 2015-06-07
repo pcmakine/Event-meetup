@@ -100,6 +100,15 @@
         <div class="container">
 
             <div class="starter-template">
+                
+                <div>
+                    <h2>Event details</h2>
+                    <div id="eventDetailsName"></div>
+                    <div id="eventDetailsAddress"></div>
+                    <div id="eventDetailsDate"></div>
+                    <div id="eventDetailsTime"></div>
+                    <div id="eventDetailsDescription"></div>
+                </div>
 
 
                 <!--<p class="lead">Choose an event or make your own</p>-->
@@ -110,8 +119,6 @@
                 <h2 id="signupHeading">Sign up for the event!</h2>
 
                 <div>
-
-
                     <form:form role="form" class="form-inline" commandName="registration" action="/registrations" method="POST" >
                         <div class="form-group">
                             <label for="name" >Name</label>
@@ -124,26 +131,6 @@
                     </form:form>
                 </div>
 
-
-
-
-
-
-
-
-                <form:form id="eventForm" commandName="event" action="/events" method="POST" accept-charset="UTF-8" >
-                    Event name: <form:input id="newEventName" path="name" /> <form:errors path="name" /><br/><form:errors path="name" /> 
-                    Address: <form:input id="newEventAddress" path="location.address" /> <form:errors path="location.address" /> 
-                    <input name="searchAddress" onclick="showPlace('test', document.getElementById('newEventAddress').value)" type="button" value="Search" /><br/>
-                    <fmt:formatDate var="fmtDate" value="${eventForm.event.date}" pattern="dd.MM.yyyy"/>
-                    Date: <form:input id="newEventDate" path="date" name="event.date" value="${fmtDate}" class= "date" placeholder="dd.mm.yyyy" /><br/>
-                    Time: <form:input id="newEventTime" path="time" /><br/>
-                    Description: <form:textarea path="description" rows="5" cols="30"/> <form:errors path="description" /><br/>
-                    <form:input id="newEventLongitude" path="location.longitude" type="hidden"/>
-                    <form:input id="newEventLatitude" path="location.latitude" type="hidden"/>
-                    <!--                bootstrap used here for the button-->
-                    <input class="btn btn-default" value="Create event" type="submit"/>
-                </form:form>
                 <form:form class="form-horizontal" role="form" id="eventForm" commandName="event" action="/events" method="POST" accept-charset="UTF-8" >
                     <div class="form-group col-md-12">
                         <label class="control-label col-md-2" for="newEventName">Event name:</label>
@@ -158,7 +145,7 @@
                         <div class="input-group col-md-10">
                             <form:input id="newEventAddress" path="location.address" class="form-control"/><form:errors path="location.address" /> 
                             <span class="input-group-btn">
-                                <button class="btn btn-default" type="button"><i class="glyphicon glyphicon-search"></i></button>
+                                <button onclick="showPlace('test', document.getElementById('newEventAddress').value)" class="btn btn-default" type="button"><i class="glyphicon glyphicon-search"></i></button>
                             </span>
                         </div>
                     </div>
