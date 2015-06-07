@@ -9,19 +9,23 @@ import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.NotBlank;
 import org.springframework.data.jpa.domain.AbstractPersistable;
+import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
 public class Registration extends AbstractPersistable<Long> {
+
     @NotBlank
     @Length(min = 4, max = 30)
     private String name;
     @Email
     private String email;
     @Temporal(javax.persistence.TemporalType.TIMESTAMP)
+    @DateTimeFormat(pattern="dd.MM.yyyy")
     private Date registrationDate;
     @ManyToOne
     @JoinColumn
     private Event event;
+
     private String comment;
 
     public String getName() {
@@ -54,6 +58,14 @@ public class Registration extends AbstractPersistable<Long> {
 
     public void setRegistrationDate(Date registrationDate) {
         this.registrationDate = registrationDate;
+    }
+
+    public String getComment() {
+        return comment;
+    }
+
+    public void setComment(String comment) {
+        this.comment = comment;
     }
 
     @Override

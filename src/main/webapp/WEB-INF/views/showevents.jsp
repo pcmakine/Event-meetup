@@ -48,7 +48,7 @@
         <div>
             <form:form commandName="registration" action="/registrations" method="POST" >
                 Name: <form:input path="name" /> <form:errors path="name" /><br/>
-                Email: <form:input path="email" /> <form:errors path="email" /><br/>
+                <form:input path="email" type="hidden"/> <form:errors path="email" /><br/>
                 <input type="submit"/>
             </form:form>
         </div>
