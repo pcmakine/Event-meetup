@@ -23,6 +23,7 @@ import wad.repository.EventRepository;
 @Controller
 @RequestMapping("*")
 public class DefaultController {
+
     @Autowired
     private EventRepository eventRepo;
 
@@ -32,5 +33,8 @@ public class DefaultController {
         model.addAttribute("events", events);
         return "redirect:/events";
     }
+
+    
+    
 
 }

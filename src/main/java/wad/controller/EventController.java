@@ -44,7 +44,7 @@ public class EventController {
     private Event getEvent() {
         return new Event();
     }
-    
+
     @InitBinder
     public void initBinder(WebDataBinder binder) {
         SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy");
@@ -79,15 +79,22 @@ public class EventController {
     }
 
     @RequestMapping(method = RequestMethod.POST)
-    public String createEvent(@Valid @ModelAttribute("event") Event event, 
+    public String createEvent(@Valid @ModelAttribute("event") Event event,
             BindingResult bindingResult) {
         System.out.println("event name: " + event.getName());
         if (!bindingResult.hasErrors()) {
-            
-        } 
+
+        }
         event.getLocation().setEvent(event);
         locationRepo.save(event.getLocation());
         eventRepo.save(event);
         return "redirect:/events";
+    }
+
+    @RequestMapping(value = "/test", method = RequestMethod.GET)
+    public String viewTest(Model model) {
+        List<Event> events = eventRepo.findAll();
+        model.addAttribute("events", events);
+        return "/WEB-INF/views/test.jsp";
     }
 }
