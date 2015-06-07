@@ -12,6 +12,7 @@
         <%@page contentType="text/html" pageEncoding="UTF-8"%>
         <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 
+
         <title>Event Meetup</title>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -20,15 +21,14 @@
         <meta name="description" content="">
         <meta name="author" content="">
 
- 
+
 
         <!-- Bootstrap core CSS -->
 
-        <link rel="stylesheet" href="/resources/bootstrap/css/bootstrap.min.css">
-        <link rel="stylesheet" href="/resources/css/styles.css">
+        <!--        <link rel="stylesheet" href="/resources/bootstrap/css/bootstrap.min.css">-->
+        <link href="<c:url value="/resources/bootstrap/css/bootstrap.min.css" />" rel="stylesheet" type="text/css"/>
+              <link rel="stylesheet" href="/resources/css/styles.css">
 
-        <!-- Custom styles for this template -->
-        <link href="starter-template.css" rel="stylesheet">
 
         <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
         <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
@@ -44,15 +44,20 @@
         <script src="<c:url value="/resources/js/map.js" />"></script>
         <script>
             var eventList = [];
-                            <c:forEach var="event" items="${events}">
-                                e = {id: '${event.id}',
-                                    name: '${event.name}',
-                                    description: '${event.description}',
-                                    date: '${event.date}',
-                                    address: '${event.location.address}',
-                                    longitude: '${event.location.longitude}',
-                                    latitude: '${event.location.latitude}'};
-                                eventList.push(e);
+            console.log("test")
+            <c:forEach var="event" items="${events}" varStatus="i">
+
+                var registrationList = [];
+                var reg = {};
+                e = {id: '${event.id}',
+                    name: '${event.name}',
+                    registrations: '${registrationList}',
+                    description: '${event.description}',
+                    date: '${event.date}',
+                    address: '${event.location.address}',
+                    longitude: '${event.location.longitude}',
+                    latitude: '${event.location.latitude}'};
+                eventList.push(e);
             </c:forEach>
         </script>
 
@@ -89,108 +94,109 @@
 
         <!--END GOOGLE MAP API -->
         <!--TABS NAV-->
-        
-<ul class="nav nav-tabs">
-  <li role="presentation" class="active"><a href="#">Create Event</a></li>
-  <li role="presentation"><a href="#">Event Details</a></li>
-  
-</ul>
-        
+
+        <ul class="nav nav-tabs">
+            <li role="presentation" class="active"><a href="#">Create Event</a></li>
+            <li role="presentation"><a href="#">Event Details</a></li>
+
+        </ul>
+
         <!--END TABS NAV-->
 
-    <!-- END CONTAINER FORM RESPONSIVE -->
+        <!-- END CONTAINER FORM RESPONSIVE -->
 
-    <div class="container">
+        <div class="container">
 
-        <div class="starter-template">
-
-            
-<!--<p class="lead">Choose an event or make your own</p>-->
-
-        <!--CONTAINER FORM RESPONSIVE -->
+            <div class="starter-template">
 
 
-    <form:form id="eventForm" commandName="event" action="/events" method="POST" accept-charset="UTF-8" >
-        
-        
-        <fmt:formatDate value="${yourObject.date}" var="dateString" pattern='dd.MM.yyyy' />
-        
-        Event name: <form:input id="newEventName" path="name" /> <form:errors path="name" /><br/><form:errors path="name" /> 
-        
-        Address: <form:input id="newEventAddress" path="location.address" /> <form:errors path="location.address" /> 
-        <input name="searchAddress" onclick="showPlace('test', document.getElementById('newEventAddress').value)" type="button" class="btn btn-default" value="Search" /><br/>
-        Date: <form:input id="newEventDate" path="date" class= "date" placeholder="dd.mm.yyyy" value ="<fmt:formatDate value='' pattern='dd.MM.yyyy' />"/><br/>
-        Time: <form:input id="newEventTime" path="time" /><br/>
-        Description: <form:textarea path="description" rows="5" cols="30"/> <form:errors path="description" /><br/>
-        <form:input id="newEventLongitude" path="location.longitude" type="hidden"/>
-        <form:input id="newEventLatitude" path="location.latitude" type="hidden"/>
-        <!--                bootstrap used here for the button-->
-        <input class="btn btn-default" value="Create event"  type="submit"/>
-    </form:form>
-        
-<form:form id="eventForm" commandName="event" action="/events" method="POST" accept-charset="UTF-8" >
-<fmt:formatDate value="${yourObject.date}" var="dateString" pattern='dd.MM.yyyy' />
-<table>
-    <tr>
-        <td>Event name:</td>
-        <td><form:input id="newEventName" path="name" /></td>
-        <td> <form:errors path="name" /><br/><form:errors path="name" /> </td>
-    </tr>
-    <tr>
-        <td>Address:</td>
-        <td> <form:input id="newEventAddress" path="location.address" /></td>
-        <td>  <input name="searchAddress" onclick="showPlace('test', document.getElementById('newEventAddress').value)" type="button" class="btn btn-default" value="Search" /><form:errors path="location.address" /> </td>
-    </tr>
-    <tr>
-        <td>Date:</td>
-        <td><form:input id="newEventDate" path="date" class= "date" placeholder="dd.mm.yyyy" value ="<fmt:formatDate value='' pattern='dd.MM.yyyy' />"/></td>
-        <td></td>
-    </tr>
-    <tr>
-        <td>Time:</td>
-        <td><form:input id="newEventTime" path="time" /></td>
-        <td></td>
-    </tr>
-    <tr>
-        <td>Description:</td>
-        <td><form:textarea path="description" rows="5" cols="30"/></td>
-        <td><form:errors path="description" /></td>
-    </tr>
-</table>
-        
-</form:form>
-   
-        
- 
-        
-        
+                <!--<p class="lead">Choose an event or make your own</p>-->
 
-    <h2 id="signupHeading">Sign up for the event!</h2>
-
-    <div>
-        <form:form commandName="registration" action="/registrations" method="POST" >
-            Name: <form:input path="name" /> <form:errors path="name" /><br/>
-            <form:input path="email" type="hidden"/> <form:errors path="email" /><br/>
-            <input class="btn btn-default" value="Join" type="submit"/>
-        </form:form>
-    </div>
-
-            
-        </div>
-
-    </div><!-- /.container -->
-   
-
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-
-    <script src="/resources/bootstrap/js/bootstrap.min.js"></script>
+                <!--CONTAINER FORM RESPONSIVE -->
 
 
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
-</body>
+
+
+                <form:form id="eventForm" commandName="event" action="/events" method="POST" accept-charset="UTF-8" >
+                    Event name: <form:input id="newEventName" path="name" /> <form:errors path="name" /><br/><form:errors path="name" /> 
+                    Address: <form:input id="newEventAddress" path="location.address" /> <form:errors path="location.address" /> 
+                    <input name="searchAddress" onclick="showPlace('test', document.getElementById('newEventAddress').value)" type="button" value="Search" /><br/>
+                    <fmt:formatDate var="fmtDate" value="${eventForm.event.date}" pattern="dd.MM.yyyy"/>
+                    Date: <form:input id="newEventDate" path="date" name="event.date" value="${fmtDate}" class= "date" placeholder="dd.mm.yyyy" /><br/>
+                    Time: <form:input id="newEventTime" path="time" /><br/>
+                    Description: <form:textarea path="description" rows="5" cols="30"/> <form:errors path="description" /><br/>
+                    <form:input id="newEventLongitude" path="location.longitude" type="hidden"/>
+                    <form:input id="newEventLatitude" path="location.latitude" type="hidden"/>
+                    <!--                bootstrap used here for the button-->
+                    <input class="btn btn-default" value="Create event" type="submit"/>
+                </form:form>
+
+                <form:form id="eventForm" commandName="event" action="/events" method="POST" accept-charset="UTF-8" >
+                    <fmt:formatDate value="${yourObject.date}" var="dateString" pattern='dd.MM.yyyy' />
+                    <table>
+                        <tr>
+                            <td>Event name:</td>
+                            <td><form:input id="newEventName" path="name" /></td>
+                        <td> <form:errors path="name" /><br/><form:errors path="name" /> </td>
+                        </tr>
+                        <tr>
+                            <td>Address:</td>
+                            <td> <form:input id="newEventAddress" path="location.address" /></td>
+                        <td>  <input name="searchAddress" onclick="showPlace('test', document.getElementById('newEventAddress').value)" type="button" class="btn btn-default" value="Search" /><form:errors path="location.address" /> </td>
+                        </tr>
+                        <tr>
+                            <td>Date:</td>
+                            <td><form:input id="newEventDate" path="date" class= "date" placeholder="dd.mm.yyyy" value ="<fmt:formatDate value='' pattern='dd.MM.yyyy' />"/></td>
+                        <td></td>
+                        </tr>
+                        <tr>
+                            <td>Time:</td>
+                            <td><form:input id="newEventTime" path="time" /></td>
+                        <td></td>
+                        </tr>
+                        <tr>
+                            <td>Description:</td>
+                            <td><form:textarea path="description" rows="5" cols="30"/></td>
+                        <td><form:errors path="description" /></td>
+                        </tr>
+                    </table>
+
+                </form:form>
+
+
+
+
+
+                <h2 id="signupHeading">Sign up for the event!</h2>
+
+                <div>
+                    <form:form role="form" class="form-inline" commandName="registration" action="/registrations" method="POST" >
+                        <div class="form-group">
+                            <label for="name" >Name</label>
+                            <form:input id="name" path="name" class="form-control" /> <form:errors path="name" />
+                        </div>
+
+                        <input id="eventId" type="hidden"/><br/>
+                        <input type="submit"/>
+
+                    </form:form>
+                </div>
+
+
+            </div>
+
+        </div><!-- /.container -->
+
+        <!-- Bootstrap core JavaScript
+        ================================================== -->
+        <!-- Placed at the end of the document so the pages load faster -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
+        <script src="/resources/bootstrap/js/bootstrap.min.js"></script>
+
+
+        <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+        <!--        <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>-->
+    </body>
 </html>
 

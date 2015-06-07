@@ -14,17 +14,19 @@
         <script src="<c:url value="/resources/js/map.js" />"></script>
         <script>
             var eventList = [];
+
             <c:forEach var="event" items="${events}">
-                var registrationList = [];
-                var reg = {};
+            var registrationList = [];
+console.log("test")
                 <c:forEach var="registration" items="${event.registrations}">
-                    reg.name = '${registration.name}';
-                    registrationList.push(reg)
-                    console.log("")
+                    reg = {
+                        name: '${registration.name}'
+                    };
+                    registrationList.push(reg);
                 </c:forEach>
             e = {id: '${event.id}',
                 name: '${event.name}',
-                registrations: '${registrationList}',
+                registrations: registrationList,
                 description: '${event.description}',
                 date: '${event.date}',
                 address: '${event.location.address}',
@@ -43,24 +45,24 @@
             Event name: <form:input id="newEventName" path="name" /> <form:errors path="name" /><br/><form:errors path="name" /> 
             Address: <form:input id="newEventAddress" path="location.address" /> <form:errors path="location.address" /> 
             <input name="searchAddress" onclick="showPlace('test', document.getElementById('newEventAddress').value)" type="button" value="Search" /><br/>
-            <fmt:formatDate var="fmtDate" value="${eventForm.event.date}" pattern="dd.MM.yyyy"/>
-            Date: <form:input id="newEventDate" path="date" name="event.date" value="${fmtDate}" class= "date" placeholder="dd.mm.yyyy" /><br/>
-            Time: <form:input id="newEventTime" path="time" /><br/>
-            Description: <form:textarea path="description" rows="5" cols="30"/> <form:errors path="description" /><br/>
-            <form:input id="newEventLongitude" path="location.longitude" type="hidden"/>
-            <form:input id="newEventLatitude" path="location.latitude" type="hidden"/>
-            <!--                bootstrap used here for the button-->
-            <input class="btn btn-default" value="Create event" type="submit"/>
+        <fmt:formatDate var="fmtDate" value="${eventForm.event.date}" pattern="dd.MM.yyyy"/>
+        Date: <form:input id="newEventDate" path="date" name="event.date" value="${fmtDate}" class= "date" placeholder="dd.mm.yyyy" /><br/>
+        Time: <form:input id="newEventTime" path="time" /><br/>
+        Description: <form:textarea path="description" rows="5" cols="30"/> <form:errors path="description" /><br/>
+        <form:input id="newEventLongitude" path="location.longitude" type="hidden"/>
+        <form:input id="newEventLatitude" path="location.latitude" type="hidden"/>
+        <!--                bootstrap used here for the button-->
+        <input class="btn btn-default" value="Create event" type="submit"/>
+    </form:form>
+
+    <h2 id="signupHeading">Sign up for the event!</h2>
+
+    <div>
+        <form:form role="form" commandName="registration" action="/registrations" method="POST" >
+            Name: <form:input path="name" /> <form:errors path="name" /><br/>
+            <input id="eventId"/><br/>
+            <input type="submit"/>
         </form:form>
-
-            <h2 id="signupHeading">Sign up for the event!</h2>
-
-        <div>
-            <form:form role="form" commandName="registration" action="/registrations" method="POST" >
-                Name: <form:input path="name" /> <form:errors path="name" /><br/>
-                <input id="eventId"/><br/>
-                <input type="submit"/>
-            </form:form>
-        </div>
-    </body>
+    </div>
+</body>
 </html>
