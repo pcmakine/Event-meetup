@@ -131,26 +131,6 @@
                     </form:form>
                 </div>
 
-                <form:form class="form-horizontal" role="form" id="eventForm" commandName="event" action="/events" method="POST" accept-charset="UTF-8" >
-                    <div class="form-group col-md-12">
-                        <label class="control-label col-md-2" for="newEventName">Event name:</label>
-                        <div class="input-group col-md-10">
-                            <form:input id="newEventName" path="name" class="form-control"/><form:errors path="name" /><br/><form:errors path="name" /> 
-
-                        </div>
-                    </div>
-
-                    <div class="form-group col-md-12">
-                        <label class="control-label col-md-2" for="newEventAddress">Address:</label>
-                        <div class="input-group col-md-10">
-                            <form:input id="newEventAddress" path="location.address" class="form-control"/><form:errors path="location.address" /> 
-                            <span class="input-group-btn">
-                                <button onclick="showPlace('test', document.getElementById('newEventAddress').value)" class="btn btn-default" type="button"><i class="glyphicon glyphicon-search"></i></button>
-                            </span>
-                        </div>
-                    </div>
-                </form:form>
-
             </div>
 
         </div><!-- /.container -->
