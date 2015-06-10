@@ -118,14 +118,16 @@
                     <div id="signUpForm">
                         <form:form role="form" class="form-horizontal" commandName="registration" action="/registrations" method="POST" >
                             <div class="form-group col-md-12">
-                                <label for="name" class="control-label col-md-2" >Name</label>
+                                <label for="name" class="control-label col-md-2" ></label>
                                 <div class="input-group col-md-10">
-                                    <form:input id="name" path="name" class="form-control col-md-10" /> <form:errors path="name" /><br/>
+                                    <form:input id="name" path="name" class="form-control col-md-10" placeholder="Name" /> <form:errors path="name" /><br/>
                                 </div>
                             </div>
 
+                           
+<!--                                
                             <input id="eventId" name="eventId"/><br/>
-                            <input type="submit"/>
+                            <input type="submit"/>-->
 
                         </form:form>
                     </div>
