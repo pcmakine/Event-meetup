@@ -12,11 +12,43 @@ body {
   padding-top: 50px;
 }
 .starter-template {
-  padding: 40px 15px;
+  padding: 5px 15px;
   text-align: center;
 }
 
 .container{
     display:flex;
     flex-align:start;
+}
+
+.h2, h2 {
+  font-size: 30px;
+  font-family: 'Raleway', sans-serif;
+}
+
+/*input*/
+
+.input-group .form-control:first-child, .input-group-addon:first-child, .input-group-btn:first-child>.btn, .input-group-btn:first-child>.btn-group>.btn, .input-group-btn:first-child>.dropdown-toggle, .input-group-btn:last-child>.btn-group:not(:last-child)>.btn, .input-group-btn:last-child>.btn:not(:last-child):not(.dropdown-toggle) {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  font-family: 'Raleway', sans-serif;
+}
+
+/*buttons*/
+
+.btn-default {
+  color: #333;
+  background-color: #fff;
+  border-color: #ccc;
+  font-family: 'Raleway', sans-serif;
+}
+
+/*navbar logo*/
+.navbar-brand {
+    font-family: 'Raleway', sans-serif;
+}
+.navbar-inverse .navbar-brand:focus, .navbar-inverse .navbar-brand:hover  {
+  color: #fff;
+  background-color: transparent;
+  font-family: 'Raleway', sans-serif;
 }
