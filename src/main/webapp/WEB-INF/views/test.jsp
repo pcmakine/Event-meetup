@@ -122,7 +122,7 @@
                     <%@include file="includes/createeventform.jsp" %>
 
 
-                    <div id="signUpForm">
+                    <div id="signUpForm" style="display:none;">
                         <h2 id="signupHeading">Sign up for the event!</h2>
                         <form:form role="form" class="form-horizontal" commandName="registration" action="/registrations" method="POST" >
                            <div class="form-group row">

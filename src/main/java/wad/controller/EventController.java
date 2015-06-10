@@ -50,6 +50,8 @@ public class EventController {
         SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy");
         sdf.setLenient(true);
         binder.registerCustomEditor(Date.class, new CustomDateEditor(sdf, true));
+        
+        System.out.println("Name: " + binder.getObjectName());
     }
 
     @ModelAttribute("registration")
