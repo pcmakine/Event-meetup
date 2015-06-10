@@ -27,7 +27,7 @@ function initialize() {
     map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
     getLocation();
     GeoMarker = new GeolocationMarker(map);
-    google.maps.event.addListener(map, 'click', function (event) {
+    google.maps.event.addListener(map, 'onmousedown', function (event) {
         mapZoom = map.getZoom();
         startLocation = event.latLng;
         if (typeof openInfoWindow !== 'undefined' && openInfoWindow !== null) {

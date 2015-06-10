@@ -20,7 +20,7 @@
             <div class="input-group col-xs-12">
                 <form:input id="newEventAddress" path="location.address" class="form-control" placeholder="Address"/><form:errors path="location.address" /> 
                 <span class="input-group-btn">
-                    <button onclick="showPlace('test', document.getElementById('newEventAddress').value)" class="btn btn-default" type="button"><i class="glyphicon glyphicon-search"></i></button>
+                    <button onmousedown="showPlace('test', document.getElementById('newEventAddress').value)" class="btn btn-default" type="button"><i class="glyphicon glyphicon-search"></i></button>
                 </span>
             </div>
         </div>
