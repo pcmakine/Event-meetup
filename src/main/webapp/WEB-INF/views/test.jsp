@@ -30,6 +30,7 @@
         <link rel="stylesheet" href="/resources/css/styles.css">
 
 
+
         <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
         <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
 
@@ -42,6 +43,7 @@
 
         <script src="http://maps.googleapis.com/maps/api/js"></script>
         <script src="<c:url value="/resources/js/map.js" />"></script>
+        <script src="<c:url value="/resources/js/geolocationMarker.js" />"></script>
         <script>
             var eventList = [];
             <c:forEach var="event" items="${events}" varStatus="i">
@@ -98,39 +100,37 @@
         <!-- END CONTAINER FORM RESPONSIVE -->
 
         <div class="container">
+            <div class="starter-template row">
+                <div class="col-xs-4"></div><!-- 
+                --><div id="centerContainer" class="col-xs-4">
+                    <div id="eventDetails" ><!-- 
+                        The event details are filled here dynamically by the map.js
+                        --></div>
+                    <!--<p class="lead">Choose an event or make your own</p>-->
 
-            <div class="starter-template">
-                
-                <div>
-                    <h2>Event details</h2>
-                    <div id="eventDetailsName"></div>
-                    <div id="eventDetailsAddress"></div>
-                    <div id="eventDetailsDate"></div>
-                    <div id="eventDetailsTime"></div>
-                    <div id="eventDetailsDescription"></div>
+
+                    <%@include file="includes/createeventform.jsp" %>
+
+
+
+                    <h2 id="signupHeading">Sign up for the event!</h2>
+
+                    <div>
+                        <form:form role="form" class="form-horizontal" commandName="registration" action="/registrations" method="POST" >
+                            <div class="form-group col-md-12">
+                                <label for="name" class="control-label col-md-2" >Name</label>
+                                <div class="input-group col-md-10">
+                                    <form:input id="name" path="name" class="form-control col-md-10" /> <form:errors path="name" /><br/>
+                                </div>
+                            </div>
+
+                            <input id="eventId" name="eventId"/><br/>
+                            <input type="submit"/>
+
+                        </form:form>
+                    </div>
                 </div>
-
-
-                <!--<p class="lead">Choose an event or make your own</p>-->
-
-                <!--CONTAINER FORM RESPONSIVE -->
-                <%@include file="includes/createeventform.jsp" %>
-
-                <h2 id="signupHeading">Sign up for the event!</h2>
-
-                <div>
-                    <form:form role="form" class="form-inline" commandName="registration" action="/registrations" method="POST" >
-                        <div class="form-group">
-                            <label for="name" >Name</label>
-                            <form:input id="name" path="name" class="form-control" /> <form:errors path="name" />
-                        </div>
-
-                        <input id="eventId" name="eventId"/><br/>
-                        <input type="submit"/>
-
-                    </form:form>
-                </div>
-
+                <div class="col-xs-4"></div>
             </div>
 
         </div><!-- /.container -->

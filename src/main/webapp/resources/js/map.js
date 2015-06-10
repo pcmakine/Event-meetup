@@ -4,28 +4,57 @@
  * and open the template in the editor.
  */
 
+var zoomOnUserLocation = 12;
+var zoomOutNoUserLocation = 3;
+
 var signupHeading = "Sign up for the event "
 var chosenEvent = {};
 var infowindow = new google.maps.InfoWindow();
+var openInfoWindow;
 var geocoder;
 var myCenter = new google.maps.LatLng(51.508742, -0.120850);
 var mapProp = {
     center: new google.maps.LatLng(60.1733244, 24.9410248), //start from helsinki
-    zoom: 10,
+    zoom: zoomOutNoUserLocation,
     mapTypeId: google.maps.MapTypeId.ROADMAP
 };
 var markers = [];
 var newEventMarker = null;
-
+var GeoMarker;
 var map;
 function initialize() {
     geocoder = new google.maps.Geocoder();
     map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
+    getLocation();
+    GeoMarker = new GeolocationMarker(map);
+    google.maps.event.addListener(map, 'click', function (event) {
+        mapZoom = map.getZoom();
+        startLocation = event.latLng;
+        if (typeof openInfoWindow !== 'undefined' && openInfoWindow !== null) {
+            openInfoWindow.close();
+        }
 
+        // setTimeout(placeMarker, 600);
+    });
     for (index = 0; index < eventList.length; ++index) {
         addMarker(eventList[index].latitude, eventList[index].longitude, eventList[index]);
     }
 }
+
+function getLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(centerMapToUserPosition);
+    } else {
+        console.log("Geolocation is not supported by this browser.");
+    }
+}
+
+function centerMapToUserPosition(position) {
+    var latLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+    map.setZoom(zoomOnUserLocation);
+    map.panTo(latLng);
+}
+
 
 function addMarker(latit, longit, event) {
     var latLng = new google.maps.LatLng(latit, longit);
@@ -83,35 +112,71 @@ function addInfoWindow(marker, content, event) {
             if (typeof event.name !== 'undefined' && event.name !== null) {     //If the event has a name it is an existing event
                 document.getElementById('eventId').value = event.id;
                 document.getElementById('signupHeading').innerText = signupHeading + event.name;
-
-                document.getElementById('eventDetailsName').innerText = "";
-                document.getElementById('eventDetailsAddress').innerText ="";
-                 document.getElementById('eventDetailsDate').innerText = "";
-                 document.getElementById('eventDetailsTime').innerText = "";
-                 document.getElementById('eventDetailsDescription').innerText = "";
-
-                document.getElementById('eventDetailsName').innerText = event.name;
-                if (typeof event.address !== 'undefined' && event.address !== null) {
-                    document.getElementById('eventDetailsAddress').innerText = event.address;
-                }
-                if (typeof event.date !== 'undefined' && event.date !== null) {
-                    document.getElementById('eventDetailsDate').innerText = event.date;
-                }
-                if (typeof event.time !== 'undefined' && event.time !== null) {
-                    document.getElementById('eventDetailsTime').innerText = event.time;
-                }
-                if (typeof event.description !== 'undefined' && event.description !== null) {
-                    document.getElementById('eventDetailsDescription').innerText = event.description;
-                }
+                var detailsDiv = document.getElementById('eventDetails');
+                detailsDiv.innerHTML = eventDetailsHTML(event);
+                document.getElementById('centerContainer').removeChild(detailsDiv);
+                var parent = document.getElementById('centerContainer');
+                appendFirst(parent, detailsDiv);
+                //  remove('createForm');
 
             } else {
                 document.getElementById('signupHeading').innerText = signupHeading;
             }
+            openInfoWindow = infowindow;
         }
         ;
     }
     )(marker, content, infowindow));
 }
+function appendFirst(parent, childNode) {
+    if (parent.firstChild)
+        parent.insertBefore(childNode, parent.firstChild);
+    else
+        parent.appendChild(childNode);
+}
+;
+
+function remove(id) {
+    return (elem = document.getElementById(id)).parentNode.removeChild(elem);
+}
+;
+
+function eventDetailsHTML(event) {
+    var eventDetails =
+            "<h2>Event details</h2>" +
+            startRowDiv() + startColumnDiv(2) + "<b>Name: </b>" + endDiv() +
+            startColumnDiv(10) + event.name + endDiv() + endDiv();
+    if (typeof event.address !== 'undefined' && event.address !== null) {
+        eventDetails += startRowDiv() + startColumnDiv(2) + "<b>Address:</b> " + endDiv() +
+                startColumnDiv(10) + event.address + endDiv() + endDiv();
+    }
+    if (typeof event.date !== 'undefined' && event.date !== null) {
+        eventDetails += startRowDiv() + startColumnDiv(2) + "<b>Date:</b> " + endDiv() +
+                startColumnDiv(10) + event.date + endDiv() + endDiv();
+    }
+    if (typeof event.time !== 'undefined' && event.time !== null) {
+        eventDetails += startRowDiv() + startColumnDiv(2) + "<b>Time:</b> " + endDiv() +
+                startColumnDiv(10) + event.time + endDiv() + endDiv();
+    }
+    if (typeof event.description !== 'undefined' && event.description !== null) {
+        eventDetails += startRowDiv() + startColumnDiv(2) + "<b>Description:</b> " + endDiv() +
+                startColumnDiv(10) + event.description + endDiv() + endDiv();
+    }
+    return eventDetails;
+}
+
+function startColumnDiv(columns) {
+    return "<div class='col-xs-" + columns + "'>";
+}
+
+function startRowDiv() {
+    return "<div class='row'>";
+}
+
+function endDiv() {
+    return "</div>"
+}
+
 function geocodeAddressAndFillNewEventAddressField(placeName, address, func) {
     console.log("geocodeAddress method called")
     geocoder.geocode({'address': address}, function (results, status) {
@@ -124,9 +189,7 @@ function geocodeAddressAndFillNewEventAddressField(placeName, address, func) {
         }
     });
 }
-function moveMap(placeName, address, coordinates) {
-    console.log("MoveMap called")
-    console.log("geocoder: " + geocoder)
+function moveMapToNewMarker(placeName, address, coordinates) {
     if (coordinates != null) {
         var event = {};
         event.address = address;
@@ -136,7 +199,7 @@ function moveMap(placeName, address, coordinates) {
     }
 }
 function showPlace(placeName, address) {
-    geocodeAddressAndFillNewEventAddressField(placeName, address, moveMap);
+    geocodeAddressAndFillNewEventAddressField(placeName, address, moveMapToNewMarker);
 }
 
 google.maps.event.addDomListener(window, 'load', initialize);
