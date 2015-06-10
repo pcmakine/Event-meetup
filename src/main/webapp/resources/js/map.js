@@ -27,7 +27,7 @@ function initialize() {
     map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
     getLocation();
     GeoMarker = new GeolocationMarker(map);
-    google.maps.event.addListener(map, 'onmousedown', function (event) {
+    google.maps.event.addListener(map, 'mousedown', function (event) {
         mapZoom = map.getZoom();
         startLocation = event.latLng;
         if (typeof openInfoWindow !== 'undefined' && openInfoWindow !== null) {
@@ -104,7 +104,7 @@ function createEventInfoWindowText(event) {
 }
 
 function addInfoWindow(marker, content, event) {
-    google.maps.event.addListener(marker, 'onmousedown', (function (marker, content, infowindow) {
+    google.maps.event.addListener(marker, 'mousedown', (function (marker, content, infowindow) {
         return function () {
             handleMarkerClick(marker, content, event);
         };
