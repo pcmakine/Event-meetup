@@ -29,14 +29,14 @@
         <div class="form-group row">
 
             <div class="input-group col-xs-12">
-                <form:input id="newEventDate" path="date" value="${fmtDate}" name="event.date" class="date form-control" placeholder="Date: DD.MM.YYYY" /><br/>
+                <form:input id="newEventDate" type="date" path="date" value="${fmtDate}" name="event.date" class="date form-control" placeholder="Date: DD.MM.YYYY" /><br/>
             </div>
         </div>
 
 
         <div class="form-group row">
             <div class="input-group col-xs-12">
-                <input id="newEventTime" class="form-control" placeholder="Time HH:mm"/><form:errors path="time" /><br/>
+                <input id="newEventTime" type="datetime-local" class="form-control" placeholder="Time HH:mm"/><form:errors path="time" /><br/>
 
             </div>
         </div>

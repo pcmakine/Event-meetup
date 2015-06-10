@@ -104,7 +104,7 @@ function createEventInfoWindowText(event) {
 }
 
 function addInfoWindow(marker, content, event) {
-    google.maps.event.addListener(marker, 'click', (function (marker, content, infowindow) {
+    google.maps.event.addListener(marker, 'onmousedown', (function (marker, content, infowindow) {
         return function () {
             handleMarkerClick(marker, content, event);
         };
@@ -161,7 +161,7 @@ function eventDetailsHTML(event) {
                 startColumnDiv(10) + event.description + endDiv() + endDiv();
     }
     
-    eventDetails += startRowDiv() + "<button onclick='showCreateEventPage()'>Back</button>"
+    eventDetails += startRowDiv() + "<button onmousedown='showCreateEventPage()'>Back</button>"
     return eventDetails;
 }
 
