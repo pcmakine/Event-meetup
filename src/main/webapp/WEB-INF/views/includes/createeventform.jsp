@@ -45,10 +45,11 @@
         <div class="form-group row">
             <label class="control-label col-xs-2" for="newEventTime">Description</label>
             <div class="input-group col-xs-10">
-                <form:textarea id="newEventTime" path="description" class="form-control" rows="2" cols="30"/><form:errors path="description" /><br/>
-
+                <form:textarea id="newEventDescription" path="description" class="form-control" rows="2" cols="30"/><form:errors path="description" /><br/>
             </div>
         </div>
+        <form:input id="newEventLongitude" path="location.longitude" type="hidden"/>
+        <form:input id="newEventLatitude" path="location.latitude" type="hidden"/>
         <input class="btn btn-default" value="Create event" type="submit"/>
     </form:form>
 </div>
