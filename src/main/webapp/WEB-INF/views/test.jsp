@@ -27,6 +27,7 @@
 
         <!--        <link rel="stylesheet" href="/resources/bootstrap/css/bootstrap.min.css">-->
         <link href="<c:url value="/resources/bootstrap/css/bootstrap.min.css" />" rel="stylesheet" type="text/css"/>
+        <link href="<c:url value="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css"/>" rel="stylesheet" type="text/css"/>
         <link href="/resources/css/styles.css"  rel="stylesheet" >
         <!-- GOOGLE FONTS Raleway -->
       <link href='http://fonts.googleapis.com/css?family=Raleway:100,200,300' rel='stylesheet' type='text/css'>
@@ -148,8 +149,11 @@
         ================================================== -->
         <!-- Placed at the end of the document so the pages load faster -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+         <script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
 
         <script src="/resources/bootstrap/js/bootstrap.min.js"></script>
+
+     
 
 
         <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->

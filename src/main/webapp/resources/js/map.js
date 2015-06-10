@@ -22,7 +22,12 @@ var markers = [];
 var newEventMarker = null;
 var GeoMarker;
 var map;
+
 function initialize() {
+ $('#newEventDate').datepicker({
+    format: "dd.mm.yyyy",
+ });
+
     geocoder = new google.maps.Geocoder();
     map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
     getLocation();
