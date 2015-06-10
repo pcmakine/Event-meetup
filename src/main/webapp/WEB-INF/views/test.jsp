@@ -101,8 +101,8 @@
 
         <div class="container">
             <div class="starter-template row">
-                <div class="col-xs-4"></div><!-- 
-                --><div id="centerContainer" class="col-xs-4">
+                <div class="col-xs-0 col-md-4"></div><!-- 
+                --><div id="centerContainer" class="col-xs-12 col-md-4">
                     <div id="eventDetails" ><!-- 
                         The event details are filled here dynamically by the map.js
                         --></div>
@@ -118,14 +118,16 @@
                     <div>
                         <form:form role="form" class="form-horizontal" commandName="registration" action="/registrations" method="POST" >
                             <div class="form-group col-md-12">
-                                <label for="name" class="control-label col-md-2" >Name</label>
+                                <label for="name" class="control-label col-md-2" ></label>
                                 <div class="input-group col-md-10">
-                                    <form:input id="name" path="name" class="form-control col-md-10" /> <form:errors path="name" /><br/>
+                                    <form:input id="name" path="name" class="form-control col-md-10" placeholder="Name" /> <form:errors path="name" /><br/>
                                 </div>
                             </div>
 
+                           
+<!--                                
                             <input id="eventId" name="eventId"/><br/>
-                            <input type="submit"/>
+                            <input type="submit"/>-->
 
                         </form:form>
                     </div>
