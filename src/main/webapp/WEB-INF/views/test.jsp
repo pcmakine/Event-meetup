@@ -101,21 +101,21 @@
 
         <div class="container">
             <div class="starter-template row">
-                <div class="col-xs-4"></div><!-- 
-                --><div id="centerContainer" class="col-xs-4">
+                <div class="col-xs-0 col-md-4"></div><!-- 
+                --><div id="centerContainer" class="col-xs-12 col-md-4">
                     <div id="eventDetails" ><!-- 
                         The event details are filled here dynamically by the map.js
                         --></div>
                     <!--<p class="lead">Choose an event or make your own</p>-->
 
-
+                    
                     <%@include file="includes/createeventform.jsp" %>
 
 
 
                     <h2 id="signupHeading">Sign up for the event!</h2>
 
-                    <div>
+                    <div id="signUpForm">
                         <form:form role="form" class="form-horizontal" commandName="registration" action="/registrations" method="POST" >
                             <div class="form-group col-md-12">
                                 <label for="name" class="control-label col-md-2" >Name</label>
@@ -130,7 +130,7 @@
                         </form:form>
                     </div>
                 </div>
-                <div class="col-xs-4"></div>
+                <div class="col-xs-0 col-md-4"></div>
             </div>
 
         </div><!-- /.container -->

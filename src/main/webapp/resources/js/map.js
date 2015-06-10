@@ -105,28 +105,32 @@ function createEventInfoWindowText(event) {
 function addInfoWindow(marker, content, event) {
     google.maps.event.addListener(marker, 'click', (function (marker, content, infowindow) {
         return function () {
-            infowindow.setContent(content);
-            infowindow.open(map, marker);
-            console.log("called the listener, event name: " + event.name)
-            console.log("registrations: " + event.registrations)
-            if (typeof event.name !== 'undefined' && event.name !== null) {     //If the event has a name it is an existing event
-                document.getElementById('eventId').value = event.id;
-                document.getElementById('signupHeading').innerText = signupHeading + event.name;
-                var detailsDiv = document.getElementById('eventDetails');
-                detailsDiv.innerHTML = eventDetailsHTML(event);
-                document.getElementById('centerContainer').removeChild(detailsDiv);
-                var parent = document.getElementById('centerContainer');
-                appendFirst(parent, detailsDiv);
-                //  remove('createForm');
-
-            } else {
-                document.getElementById('signupHeading').innerText = signupHeading;
-            }
-            openInfoWindow = infowindow;
-        }
-        ;
+            handleMarkerClick(marker, content, event);
+        };
     }
     )(marker, content, infowindow));
+}
+
+function handleMarkerClick(marker, content, event) {
+    infowindow.setContent(content);
+    infowindow.open(map, marker);
+    console.log("called the listener, event name: " + event.name)
+    console.log("registrations: " + event.registrations)
+    if (typeof event.name !== 'undefined' && event.name !== null) {     //If the event has a name it is an existing event
+        document.getElementById('eventId').value = event.id;
+        document.getElementById('signupHeading').innerText = signupHeading + event.name;
+        var detailsDiv = document.getElementById('eventDetails');
+        detailsDiv.innerHTML = eventDetailsHTML(event);
+        document.getElementById('centerContainer').removeChild(detailsDiv);
+        var parent = document.getElementById('centerContainer');
+        appendFirst(parent, detailsDiv);
+        var createForm = document.getElementById('createForm');
+        createForm.style.display = 'none';
+
+    } else {
+        document.getElementById('signupHeading').innerText = signupHeading;
+    }
+    openInfoWindow = infowindow;
 }
 function appendFirst(parent, childNode) {
     if (parent.firstChild)
@@ -136,16 +140,9 @@ function appendFirst(parent, childNode) {
 }
 ;
 
-function remove(id) {
-    return (elem = document.getElementById(id)).parentNode.removeChild(elem);
-}
-;
 
 function eventDetailsHTML(event) {
-    var eventDetails =
-            "<h2>Event details</h2>" +
-            startRowDiv() + startColumnDiv(2) + "<b>Name: </b>" + endDiv() +
-            startColumnDiv(10) + event.name + endDiv() + endDiv();
+    var eventDetails = "<h2>" + event.name + "</h2>";
     if (typeof event.address !== 'undefined' && event.address !== null) {
         eventDetails += startRowDiv() + startColumnDiv(2) + "<b>Address:</b> " + endDiv() +
                 startColumnDiv(10) + event.address + endDiv() + endDiv();
