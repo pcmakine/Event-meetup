@@ -27,7 +27,7 @@
 
         <!--        <link rel="stylesheet" href="/resources/bootstrap/css/bootstrap.min.css">-->
         <link href="<c:url value="/resources/bootstrap/css/bootstrap.min.css" />" rel="stylesheet" type="text/css"/>
-        <link rel="stylesheet" href="/resources/css/styles.css">
+        <link href="/resources/css/styles.css"  rel="stylesheet" >
         <!-- GOOGLE FONTS Raleway -->
       <link href='http://fonts.googleapis.com/css?family=Raleway:100,200,300' rel='stylesheet' type='text/css'>
 
@@ -94,7 +94,7 @@
 
         <!--GOOGLE MAP API -->
 
-        <div id="googleMap"  style="width:100%;height:380px;"></div>
+        <div id="googleMap"  style="width:100%;height:300px;"></div>
 
         <!--END GOOGLE MAP API -->
 
@@ -133,9 +133,9 @@
                             </div>
 
 
+                           <!--turned around-->
+                            <input type="submit" class="btn btn-default"/>
                             <input id="eventId" name="eventId" type="hidden"/><br/>
-                            <input type="submit"/>
-
                         </form:form>
                     </div>
                 </div>
