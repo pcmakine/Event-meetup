@@ -28,6 +28,8 @@
         <!--        <link rel="stylesheet" href="/resources/bootstrap/css/bootstrap.min.css">-->
         <link href="<c:url value="/resources/bootstrap/css/bootstrap.min.css" />" rel="stylesheet" type="text/css"/>
         <link rel="stylesheet" href="/resources/css/styles.css">
+        <!-- GOOGLE FONTS Raleway -->
+      <link href='http://fonts.googleapis.com/css?family=Raleway:100,200,300' rel='stylesheet' type='text/css'>
 
 
 
@@ -98,9 +100,17 @@
 
 
         <!-- END CONTAINER FORM RESPONSIVE -->
+        
+        
+        
 
         <div class="container">
+            
+            
+            
             <div class="starter-template row">
+               <h2>Create an Awesome Event</h2> 
+                
                 <div class="col-xs-0 col-md-4"></div><!-- 
                 --><div id="centerContainer" class="col-xs-12 col-md-4">
                     <div id="eventDetails" ><!-- 
@@ -115,10 +125,10 @@
                     <div id="signUpForm">
                         <h2 id="signupHeading">Sign up for the event!</h2>
                         <form:form role="form" class="form-horizontal" commandName="registration" action="/registrations" method="POST" >
-                            <div class="form-group col-md-12">
-                                <label for="name" class="control-label col-md-2" ></label>
-                                <div class="input-group col-md-10">
-                                    <form:input id="name" path="name" class="form-control col-md-10" placeholder="Name" /> <form:errors path="name" /><br/>
+                           <div class="form-group row">
+                                <div class="input-group col-xs-12">
+<!--                               label removed here-->
+                                    <form:input id="name" path="name" class="form-control col-xs-12" placeholder="Name" /> <form:errors path="name" /><br/>
                                 </div>
                             </div>
 

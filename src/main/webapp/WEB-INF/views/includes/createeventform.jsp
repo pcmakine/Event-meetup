@@ -9,15 +9,15 @@
 <div id="createForm">
     <form:form role="form" id="eventForm" commandName="event" action="/events" method="POST" accept-charset="UTF-8" >
         <div class="form-group row">
-            <label class="control-label col-xs-2" for="newEventName"></label>
-            <div class="input-group col-xs-10">
+           
+            <div class="input-group col-xs-12">
                 <form:input id="newEventName" path="name" class="form-control" placeholder="Event name" /><form:errors path="name" /><br/>
             </div>
         </div>
 
         <div class="form-group row">
-            <label class="control-label col-xs-2" for="newEventAddress"></label>
-            <div class="input-group col-xs-10">
+           
+            <div class="input-group col-xs-12">
                 <form:input id="newEventAddress" path="location.address" class="form-control" placeholder="Address"/><form:errors path="location.address" /> 
                 <span class="input-group-btn">
                     <button onclick="showPlace('test', document.getElementById('newEventAddress').value)" class="btn btn-default" type="button"><i class="glyphicon glyphicon-search"></i></button>
@@ -27,24 +27,24 @@
 
 
         <div class="form-group row">
-            <label class="control-label col-xs-2" for="newEventDate"></label>
-            <div class="input-group col-xs-10">
+            
+            <div class="input-group col-xs-12">
                 <form:input id="newEventDate" path="date" value="${fmtDate}" name="event.date" class="date form-control" placeholder="Date: DD.MM.YYYY" /><br/>
             </div>
         </div>
 
 
         <div class="form-group row">
-            <label class="control-label col-xs-2" for="newEventTime"></label>
-            <div class="input-group col-xs-10">
+           
+            <div class="input-group col-xs-12">
                 <form:input id="newEventTime" path="time" class="form-control" placeholder="Time"/><form:errors path="time" /><br/>
 
             </div>
         </div>
 
         <div class="form-group row">
-            <label class="control-label col-xs-2" for="newEventTime"></label>
-            <div class="input-group col-xs-10">
+           
+            <div class="input-group col-xs-12">
                 <form:textarea id="newEventDescription" path="description" class="form-control" rows="2" cols="30" placeholder="Description" /><form:errors path="description" /><br/>
             </div>
         </div>
