@@ -15,7 +15,7 @@
             <form:form commandName="registration" action="/registrations" method="POST" >
                 Name: <form:input path="name" /> <form:errors path="name" /><br/>
                 Email: <form:input path="email" /> <form:errors path="email" /><br/>
-                <input type="submit"/>
+                <input type="submit" class="btn btn-default" />
             </form:form>
         </div>
     </body>

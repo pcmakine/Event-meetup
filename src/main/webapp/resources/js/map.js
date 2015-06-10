@@ -166,7 +166,9 @@ function eventDetailsHTML(event) {
                 startColumnDiv(10) + event.description + endDiv() + endDiv();
     }
     
-    eventDetails += startRowDiv() + "<button onmousedown='showCreateEventPage()'>Back</button>"
+    eventDetails += startRowDiv() +  "<button class='btn btn-default' id='bootsbutton' onmousedown='showCreateEventPage()'>Back</button>" + endDiv();
+    //document.getElementById("bootsbutton").className = "btn btn-default";
+    //(document.getElementById("bootsbutton")).setAttribute("class", "btn btn-default");
     return eventDetails;
 }
 
