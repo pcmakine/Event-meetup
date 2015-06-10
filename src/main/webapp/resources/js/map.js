@@ -32,6 +32,7 @@ function initialize() {
         startLocation = event.latLng;
         if (typeof openInfoWindow !== 'undefined' && openInfoWindow !== null) {
             openInfoWindow.close();
+            showCreateEventPage();
         }
 
         // setTimeout(placeMarker, 600);
@@ -121,9 +122,9 @@ function handleMarkerClick(marker, content, event) {
         document.getElementById('signupHeading').innerText = signupHeading + event.name;
         var detailsDiv = document.getElementById('eventDetails');
         detailsDiv.innerHTML = eventDetailsHTML(event);
-        document.getElementById('centerContainer').removeChild(detailsDiv);
-        var parent = document.getElementById('centerContainer');
-        appendFirst(parent, detailsDiv);
+        detailsDiv.style.display='block';
+        var signUpForm = document.getElementById('signUpForm');
+        signUpForm.style.display = 'block';
         var createForm = document.getElementById('createForm');
         createForm.style.display = 'none';
 
@@ -132,13 +133,13 @@ function handleMarkerClick(marker, content, event) {
     }
     openInfoWindow = infowindow;
 }
-function appendFirst(parent, childNode) {
-    if (parent.firstChild)
-        parent.insertBefore(childNode, parent.firstChild);
-    else
-        parent.appendChild(childNode);
+
+
+function showCreateEventPage(){
+    document.getElementById('createForm').style.display='block';
+    document.getElementById('eventDetails').style.display='none'
+    document.getElementById('signUpForm').style.display='none';
 }
-;
 
 
 function eventDetailsHTML(event) {
@@ -159,6 +160,8 @@ function eventDetailsHTML(event) {
         eventDetails += startRowDiv() + startColumnDiv(2) + "<b>Description:</b> " + endDiv() +
                 startColumnDiv(10) + event.description + endDiv() + endDiv();
     }
+    
+    eventDetails += startRowDiv() + "<button onclick='showCreateEventPage()'>Back</button>"
     return eventDetails;
 }
 

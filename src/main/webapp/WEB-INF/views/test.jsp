@@ -108,14 +108,12 @@
                         --></div>
                     <!--<p class="lead">Choose an event or make your own</p>-->
 
-                    
+
                     <%@include file="includes/createeventform.jsp" %>
 
 
-
-                    <h2 id="signupHeading">Sign up for the event!</h2>
-
                     <div id="signUpForm">
+                        <h2 id="signupHeading">Sign up for the event!</h2>
                         <form:form role="form" class="form-horizontal" commandName="registration" action="/registrations" method="POST" >
                             <div class="form-group col-md-12">
                                 <label for="name" class="control-label col-md-2" ></label>
@@ -124,10 +122,9 @@
                                 </div>
                             </div>
 
-                           
-<!--                                
-                            <input id="eventId" name="eventId"/><br/>
-                            <input type="submit"/>-->
+
+                            <input id="eventId" name="eventId" type="hidden"/><br/>
+                            <input type="submit"/>
 
                         </form:form>
                     </div>
