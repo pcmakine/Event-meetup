@@ -24,6 +24,7 @@ body {
 .h2, h2 {
   font-size: 30px;
   font-family: 'Raleway', sans-serif;
+  color: #003366;
 }
 
 /*input*/
@@ -52,3 +53,71 @@ body {
   background-color: transparent;
   font-family: 'Raleway', sans-serif;
 }
+
+/*map bubble font*/
+
+.h3, h3 {
+  font-size: 24px;
+  font-family: 'Raleway', sans-serif;
+  font-weight: bold;
+}
+
+/*NAVBAR*/
+
+.navbar-inverse {
+  background-color: #FF9933;
+  border-color: #29B5B5;
+  opacity: 0.8;
+}
+
+/*LOGO*/
+
+.navbar-inverse .navbar-brand {
+  color: #003366;
+}
+
+.navbar-brand {
+  float: left;
+  height: 50px;
+  padding: 15px 15px;
+  font-size: 26px;
+  line-height: 20px;
+  /* font-style: normal; */
+  /* font-weight: bold; */
+}
+
+/*BUTTONS ON THE SCREEN*/
+
+/*#wide-button {
+  display: inline-block;
+  padding: 6px 52px;
+}
+  */
+  
+.navbar-inverse .navbar-brand:focus, .navbar-inverse .navbar-brand:hover {
+  color: #001429;
+  background-color: transparent;
+  font-family: 'Raleway', sans-serif;
+}
+
+/*MAGNIFYING GLAS GLYPHICON*/
+
+.glyphicon-search:before {
+  content: "\e003";
+  color: #003366;
+  
+}
+ 
+/*CALENDAR GLYPHICON*/  
+  
+ .glyphicon-calendar:before {
+  content: "\e109";
+  color: #003366;
+}
+
+/*ICON BAR TOGGLE BAR*/
+
+.navbar-inverse .navbar-toggle .icon-bar {
+  background-color: aliceblue;
+}
+
