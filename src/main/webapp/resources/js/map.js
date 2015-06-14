@@ -42,8 +42,6 @@ function initialize() {
 //    THIS PEACE OF CODE DISABLES THE MOUSE ZOOM WHEN USING THE MAP API
    
     google.maps.event.addListener(map, 'mousedown', function (event) {
-        mapZoom = map.getZoom();
-        startLocation = event.latLng;
         if (typeof openInfoWindow !== 'undefined' && openInfoWindow !== null) {
             openInfoWindow.close();
             showCreateEventPage();

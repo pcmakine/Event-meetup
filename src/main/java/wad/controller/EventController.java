@@ -50,7 +50,7 @@ public class EventController {
         SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy");
         sdf.setLenient(true);
         binder.registerCustomEditor(Date.class, new CustomDateEditor(sdf, true));
-        
+
         System.out.println("Name: " + binder.getObjectName());
     }
 
@@ -68,10 +68,13 @@ public class EventController {
 
     @RequestMapping(value = "/{eventId}", method = RequestMethod.GET)
     public String viewEvent(Model model, @PathVariable Long eventId) {
-        Event event = eventRepo.findOne(eventId);
-        model.addAttribute("event", event);
-        System.out.println(event);
-        System.out.println(event.getLocation());
+        /*    Event event = eventRepo.findOne(eventId);
+         model.addAttribute("event", event);
+         System.out.println(event);
+         System.out.println(event.getLocation());
+         return "/WEB-INF/views/event.jsp";*/
+        List<Event> events = eventRepo.findAll();
+        model.addAttribute("events", events);
         return "/WEB-INF/views/event.jsp";
     }
 
