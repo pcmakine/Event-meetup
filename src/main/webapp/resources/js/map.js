@@ -24,8 +24,8 @@ var GeoMarker;
 var map;
 
 function initialize() {
- $('#newEventDate').datepicker({
-    format: "dd.mm.yyyy",
+ $('.datepicker').datepicker({
+
  });
 
     geocoder = new google.maps.Geocoder();

@@ -152,6 +152,8 @@
          <script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
 
         <script src="/resources/bootstrap/js/bootstrap.min.js"></script>
+        <script src="http://vitalets.github.io/bootstrap-datepicker/bootstrap-datepicker/
+                                          js/bootstrap-datepicker.js"></script>
 
      
 

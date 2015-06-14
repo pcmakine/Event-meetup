@@ -29,8 +29,8 @@
         <div class="form-group row">
 
             <div class="input-group col-xs-12">
-                <form:input id="newEventDate" type="text" path="date" value="${fmtDate}" name="event.date" class="date-picker form-control" placeholder="Date: DD.MM.YYYY" /><br/>
-                  <label for="newEventDate" class="input-group-addon btn">
+                <form:input id="newEventDate" type="text" path="date" data-date-format="dd/mm/yyyy" value="${fmtDate}" name="event.date" class="datepicker form-control" placeholder="Date: DD.MM.YYYY" /><br/>
+                <label for="newEventDate" class="input-group-addon btn">
                     <span class="glyphicon glyphicon-calendar"></span>
                 </label>
             </div>
@@ -54,19 +54,6 @@
         <form:input id="newEventLatitude" path="location.latitude" type="hidden"/>
         <input class="btn btn-default" value="Create event" type="submit"/>
     </form:form>
-        
-        <div class="form-horizontal">
-                <div class="control-group">
-        <label for="date-picker-2" class="control-label">B</label>
 
-            <div class="input-group">
-                <input id="date-picker-2" type="text" class="date-picker form-control" />
-                <label for="date-picker-2" class="input-group-addon btn">
-                    <span class="glyphicon glyphicon-calendar"></span>
 
-                </label>
-            </div>
-
-    </div>
-        </div>
 </div>
