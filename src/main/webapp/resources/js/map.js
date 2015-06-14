@@ -32,6 +32,15 @@ function initialize() {
     map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
     getLocation();
     GeoMarker = new GeolocationMarker(map);
+    
+//    THIS PEACE OF CODE DISABLES THE MOUSE ZOOM WHEN USING THE MAP API
+    
+    google.maps.event.addListener(map, 'mouseout', function(event){
+        this.setOptions({scrollwheel:false});  
+        });
+    
+//    THIS PEACE OF CODE DISABLES THE MOUSE ZOOM WHEN USING THE MAP API
+   
     google.maps.event.addListener(map, 'mousedown', function (event) {
         mapZoom = map.getZoom();
         startLocation = event.latLng;
